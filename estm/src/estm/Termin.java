@@ -1,10 +1,7 @@
-/**
- * 
- */
 package estm;
 
 /**
- * @author adrhin130898
+ * @author ACHinrichs
  *
  */
 package estm;
