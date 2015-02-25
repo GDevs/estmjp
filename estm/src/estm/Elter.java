@@ -1,5 +1,6 @@
 package estm;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Elter {
@@ -10,9 +11,16 @@ public class Elter {
 	public Elter(String name, int ID){
 		this.name = name;
 		this.ID = ID;
+		termine = new ArrayList<Termin>();
 	}
 	
 	public String getName(){ return name;}
 	
 	public int getID(){return ID;}
+	
+	public List<Termin> getTermine(){return termine;}
+	
+	public void addTermin(){
+		
+	}
 }

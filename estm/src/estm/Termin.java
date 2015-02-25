@@ -4,7 +4,7 @@ package estm;
  * @author ACHinrichs
  *
  */
-package estm;
+
 
 public class Termin {
 
@@ -19,7 +19,7 @@ public class Termin {
 	}
 		
 	public int getZeitschiene(){
-		return zeitschiene
+		return zeitschiene;
 	}
 	
 	public Elter getElter(){
