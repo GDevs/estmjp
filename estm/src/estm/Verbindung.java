@@ -57,6 +57,11 @@ public class Verbindung
  * @return Ob die Verbindung aufgebaut ist.
  */
 	public boolean verbunden(int timeout) {
-		return conn.isValid(timeout);
+		try {
+			return conn.isValid(timeout);
+		} catch (SQLException e) {
+			//e.printStackTrace();
+			return false;
+		}
 	}
 }
