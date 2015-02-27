@@ -1,5 +1,7 @@
 package estm;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -24,19 +26,22 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Verbindung verbindung = new Verbindung();
-		ResultSet rs = verbindung.query("SHOW TABLES");
-		
-		try {
-			System.out.println(rs.getString(0));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		//Person p = new Person("Peter", "Enis", 01, "SUPAADMIN");
-		//ESTM estm = new ESTM(verbindung, p);
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+        } catch (Exception ex) {
+            System.out.println("Fehler beim Erzeugen einer neuen Instanz!");
+            System.out.println(ex);
+        }
+        Connection conn = null;
+		try{
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/mysql", "root", "toor");
+        } catch (SQLException ex) {
+            System.out.println("Fehler beim Aufbau der Verbindung!");
+        }
+		Person p = new Person("Peter", "Enis", 01, "SUPAADMIN");
+		ESTM estm = new ESTM(conn, p);
 
-		//estm.initialize();
+		estm.initialize();
 	}
 
 }

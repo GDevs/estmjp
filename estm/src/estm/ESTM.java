@@ -29,9 +29,10 @@ public class ESTM {
 	/**
 	 * 
 	 */
-	public ESTM(Verbindung verbindung, Person user) {
+	public ESTM(Connection connection, Person user) {
 		this.verbindung = verbindung;
 		this.user = user;
+		this.conn = connection;
 	}
 	
 	/**
@@ -39,15 +40,14 @@ public class ESTM {
 	 */
 	public void initialize(){
 		BufferedReader br = null;
-		String createDtb = "";
+		String createDtb[] = new String[4];
 		try {
- 
 			String sCurrentLine;
- 
 			br = new BufferedReader(new FileReader("F:/source/estmjp/estm/src/estm/database/dtbInit.sql"));
- 
+			int i = 0;
 			while ((sCurrentLine = br.readLine()) != null) {
-				createDtb += sCurrentLine;
+				createDtb[i] = sCurrentLine;
+				i++;
 			}
  
 		} catch (IOException e) {
@@ -59,30 +59,17 @@ public class ESTM {
 				ex.printStackTrace();
 			}
 		}
-		ResultSet rs = verbindung.query(createDtb);
-		System.out.println(rs.toString());
-		
+		ResultSet rs;
+		try {
+			for (String q : createDtb){
+				Statement stmt = conn.createStatement();
+				stmt.execute(q);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	
-	/**
-	 * Baut eine Verbindung zu einer Datenbank auf
-	 * @return Ob die Verbindung erfolgreich war
-	 */
-	public boolean connect(String ip, String user, String password){
-         try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-        } catch (Exception ex) {
-            System.out.println("Fehler beim Erzeugen einer neuen Instanz!");
-            System.out.println(ex);
-        }
-        try{
-         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/estm", "root", "toor");
-         return conn.isValid(5);
-        } catch (SQLException ex) {
-            System.out.println("Fehler beim Aufbau der Verbindung!");
-        }
-        return false;
-    }
     
     
     /**
