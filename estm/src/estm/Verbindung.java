@@ -49,4 +49,14 @@ public class Verbindung
      //   System.out.println("SQL Ergebnis: "+temp);
         return temp;
     }
+
+
+/**
+ * Prüft den Zustand der Verbindung
+ * @param timeout
+ * @return Ob die Verbindung aufgebaut ist.
+ */
+	public boolean verbunden(int timeout) {
+		return conn.isValid(timeout);
+	}
 }
