@@ -26,28 +26,28 @@ public class Verbindung
     
     
     
-    public String query(String pSelect)
+    public ResultSet query(String pSelect)
     {
-        String temp="";
+        ResultSet rs;
       //    System.out.println("SQL Befehl:"+pSelect);
         try{
             Statement stmt = conn.createStatement();
             stmt.execute(pSelect);
-            ResultSet rs = stmt.getResultSet();
+            rs = stmt.getResultSet();/*
             ResultSetMetaData rsmd = rs.getMetaData();
             int spalten = rsmd.getColumnCount();
             while (rs.next()){
                 for (int i = 1; i <= spalten; i++){
                     temp=temp+rs.getString(i);
                                     }
-            }
+            }*/
             rs.close();
             stmt.close();            
         } catch (SQLException ex) {
             System.out.println("Fehler beim Statement!");
         }
      //   System.out.println("SQL Ergebnis: "+temp);
-        return temp;
+        return rs;
     }
 
 
