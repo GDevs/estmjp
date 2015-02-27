@@ -1,6 +1,6 @@
 # Das LP für die Optimierung der Elternsprechtagswünsche
 # Author Georg Dorndorf
-# Version 26.02.2015
+# Version 27.02.2015
 
 #Lehrer
 set L  := {read "test.dat" as "<2s>" match "^Lehrer:" comment "#"};
@@ -11,6 +11,7 @@ set T := {read "test.dat" as "<2n>" match "^Termin:" comment "#"};
 
 #Wünsche <Termin, Lehrer, Elter>
 param w[L*E] := read "test.dat" as "<2s,3s> 4n" match "^Wunsch:" comment "#" default 0;
+
 do forall <i> in L: forall <j> in E: print i , " ", j, " ", w[i,j];
 
 #Zuweisung
@@ -19,14 +20,19 @@ set TxLxE := T * L  * E;
 #Entscheidungsvariable
 var x[TxLxE] binary ;
  
-#defnumb e(i,j,k) := if w[j,k] == i then -1 else 0 end ;
+defnumb wun(j,k) := if w[j,k] != 0 then 1 else 0 end ;
+do print wun("L1","E1");
+do print wun("L1","E2");
+do print wun("L2","E1");
 #Kosten
-minimize cost: sum <i,j,k> in TxLxE: (abs(w[j,k]-i) *  x[i,j,k]);
+minimize cost: sum <i,j,k> in TxLxE: ((wun(j,k) * -1) * (1/(abs(w[j,k]-i)+ 1))  *  x[i,j,k]);
 
 subto a: forall <i> in T: forall <j> in L: sum <i,j,k> in TxLxE: x[i,j,k] <= 1;
 subto b: forall <i> in T: forall <k> in E: sum <i,j,k> in TxLxE: x[i,j,k] <= 1;
+subto c: forall <e> in E: forall <l> in L: sum <t> in T: x[t,l,e] <= 1;
 
-
+#Steinbruch
+#================================================================================================
 
 #defnumb wunsch(i,j,k) :=  if <i,j,k> in W then 10 else -20 end ;
 #defstrg wunschV(t,j,k):=  if <t,j,k> in W and wunsch(t,j,k) != 10 then 10 else 0 end ; 
@@ -38,3 +44,4 @@ subto b: forall <i> in T: forall <k> in E: sum <i,j,k> in TxLxE: x[i,j,k] <= 1;
 #do print LxT;
 #do print x;
 #do print E;
+#defnumb e(i,j,k) := if w[j,k] == i then -1 else 0 end ;

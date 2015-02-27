@@ -1,4 +1,4 @@
-# Das LP für die Optimierung der Elternsprechtagswünsche
+# Ein LP für die Optimierung von Elternsprechtagswünschen
 # Author Georg Dorndorf
 # Version 27.02.2015
 
