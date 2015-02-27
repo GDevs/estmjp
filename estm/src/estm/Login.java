@@ -49,38 +49,38 @@ public class Login extends JFrame {
 		contentPane.setLayout(null);
 		
 		textField = new JTextField();
-		textField.setBounds(74, 36, 86, 20);
+		textField.setBounds(47, 36, 148, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblName = new JLabel("Name:");
-		lblName.setBounds(94, 11, 46, 14);
+		lblName.setBounds(47, 11, 148, 14);
 		contentPane.add(lblName);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(74, 103, 86, 20);
+		textField_1.setBounds(47, 103, 148, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		JLabel lblVorname = new JLabel("Vorname:");
-		lblVorname.setBounds(94, 88, 46, 14);
+		lblVorname.setBounds(47, 88, 148, 14);
 		contentPane.add(lblVorname);
 		
 		JLabel lblKennwort = new JLabel("Kennwort");
-		lblKennwort.setBounds(94, 156, 46, 14);
+		lblKennwort.setBounds(47, 156, 148, 14);
 		contentPane.add(lblKennwort);
 		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Button Clicked
+				// Login prüfen und ESTM starten
 			}
 		});
-		btnLogin.setBounds(72, 261, 89, 23);
+		btnLogin.setBounds(45, 261, 150, 28);
 		contentPane.add(btnLogin);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(74, 181, 86, 20);
+		passwordField.setBounds(47, 181, 148, 20);
 		contentPane.add(passwordField);
 	}
 }

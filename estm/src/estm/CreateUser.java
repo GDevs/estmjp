@@ -11,6 +11,8 @@ import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CreateUser extends JFrame {
 
@@ -91,7 +93,12 @@ public class CreateUser extends JFrame {
 		contentPane.add(lblBesttigePasswort);
 		
 		btnErstelleBenutzer = new JButton("Erstelle Benutzer");
-		btnErstelleBenutzer.setBounds(17, 251, 200, 50);
+		btnErstelleBenutzer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Benutzer erstellen und wieder zum ESTM übergeben
+			}
+		});
+		btnErstelleBenutzer.setBounds(54, 260, 125, 29);
 		contentPane.add(btnErstelleBenutzer);
 	}
 }
