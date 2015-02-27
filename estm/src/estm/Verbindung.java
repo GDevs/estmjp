@@ -2,7 +2,6 @@ package estm;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -16,9 +15,10 @@ public class Verbindung
             Class.forName("com.mysql.jdbc.Driver").newInstance();
         } catch (Exception ex) {
             System.out.println("Fehler beim Erzeugen einer neuen Instanz!");
+            System.out.println(ex);
         }
         try{
-            conn = DriverManager.getConnection("jdbc:mysql://172.16.0.61/est", "root", "toor");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/estm", "root", "toor");
         } catch (SQLException ex) {
             System.out.println("Fehler beim Aufbau der Verbindung!");
         }
@@ -28,7 +28,7 @@ public class Verbindung
     
     public ResultSet query(String pSelect)
     {
-        ResultSet rs;
+        ResultSet rs = null;
       //    System.out.println("SQL Befehl:"+pSelect);
         try{
             Statement stmt = conn.createStatement();

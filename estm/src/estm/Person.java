@@ -5,19 +5,22 @@ import java.util.List;
 
 public class Person {
 
-	private String name;
+	private String name, vorname;
 	private int ID;
 	private List<Termin> termine;
 	private String status;
 	
-	public Person(String name, int ID, String status){
+	public Person(String name, String vorname, int ID, String status){
 		this.name = name;
+		this.vorname = vorname;
 		this.ID = ID;
 		this.status = status;
 		termine = new ArrayList<Termin>();
 	}
 	
 	public String getName(){ return name;}
+	
+	public String getVorname(){return vorname;}
 	
 	public int getID(){return ID;}
 	

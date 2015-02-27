@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import javax.swing.JCheckBox;
 
 public class Login extends JFrame {
 
@@ -82,5 +83,10 @@ public class Login extends JFrame {
 		passwordField = new JPasswordField();
 		passwordField.setBounds(47, 181, 148, 20);
 		contentPane.add(passwordField);
+		
+		JCheckBox chckbxSpezifiziereLogin = new JCheckBox("Default Server");
+		chckbxSpezifiziereLogin.setSelected(true);
+		chckbxSpezifiziereLogin.setBounds(45, 217, 150, 23);
+		contentPane.add(chckbxSpezifiziereLogin);
 	}
 }
