@@ -9,10 +9,10 @@ package estm;
 public class Termin {
 
 	private int zeitschiene;
-	private Elter elter;
-	private Lehrer lehrer;
+	private Person elter;
+	private Person lehrer;
 		
-	public Termin(int zeitschiene,Elter elter, Lehrer lehrer){
+	public Termin(int zeitschiene,Person elter, Person lehrer){
 		this.zeitschiene = zeitschiene;
 		this.elter = elter;
 		this.lehrer = lehrer; 
@@ -22,11 +22,11 @@ public class Termin {
 		return zeitschiene;
 	}
 	
-	public Elter getElter(){
+	public Person getElter(){
 		return elter;
 	}
 	
-	public Lehrer getLehrer(){
+	public Person getLehrer(){
 		return lehrer;
 	}
 }

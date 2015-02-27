@@ -12,8 +12,8 @@ import java.util.List;
 public class ESTM {
 	private Verbindung verbindung;
 	
-	private List<Elter> eltern;
-	private List<Lehrer> lehrer;
+	private List<Person> eltern;
+	private List<Person> lehrer;
 	
 	
 	/**
