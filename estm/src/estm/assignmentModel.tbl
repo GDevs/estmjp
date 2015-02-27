@@ -1,0 +1,18 @@
+zimpl	v       0	x$A$a           	"x$A$a"
+zimpl	v       1	x$A$b           	"x$A$b"
+zimpl	v       2	x$A$c           	"x$A$c"
+zimpl	v       3	x$B$a           	"x$B$a"
+zimpl	v       4	x$B$b           	"x$B$b"
+zimpl	v       5	x$B$c           	"x$B$c"
+zimpl	v       6	x$C$a           	"x$C$a"
+zimpl	v       7	x$C$b           	"x$C$b"
+zimpl	v       8	x$C$c           	"x$C$c"
+zimpl	c       0	b_1             	"b_1"	0.0000000000000000e+000
+zimpl	c       1	b_2             	"b_2"	0.0000000000000000e+000
+zimpl	c       2	b_3             	"b_3"	0.0000000000000000e+000
+zimpl	c       3	b_4             	"b_4"	0.0000000000000000e+000
+zimpl	c       4	b_5             	"b_5"	0.0000000000000000e+000
+zimpl	c       5	b_6             	"b_6"	0.0000000000000000e+000
+zimpl	c       6	b_7             	"b_7"	0.0000000000000000e+000
+zimpl	c       7	b_8             	"b_8"	0.0000000000000000e+000
+zimpl	c       8	b_9             	"b_9"	0.0000000000000000e+000
