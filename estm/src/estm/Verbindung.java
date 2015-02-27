@@ -16,11 +16,12 @@ public class Verbindung
             System.out.println("Fehler beim Erzeugen einer neuen Instanz!");
         }
         try{
-            conn = DriverManager.getConnection("jdbc:mysql://meltzow.homelinux.net/leo", "leo", "leo");
+            conn = DriverManager.getConnection("jdbc:mysql://172.16.0.61/est", "root", "toor");
         } catch (SQLException ex) {
             System.out.println("Fehler beim Aufbau der Verbindung!");
         }
     }
+    
     
     
     public String query(String pSelect)
