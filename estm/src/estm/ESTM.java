@@ -19,7 +19,7 @@ import java.util.List;
  * 
  */
 public class ESTM {
-	private Verbindung verbindung;
+	//private Verbindung verbindung;
 	private Connection conn;
 
 	private List<Person> eltern;
@@ -32,7 +32,7 @@ public class ESTM {
 	 * 
 	 */
 	public ESTM(Connection connection, Person user) {
-		this.verbindung = verbindung;
+		//this.verbindung = verbindung;
 		this.user = user;
 		this.conn = connection;
 	}
