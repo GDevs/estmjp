@@ -2,6 +2,7 @@ package estm;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.TextField;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -9,18 +10,20 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JPasswordField;
 import javax.swing.JCheckBox;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
+	private JPasswordField passwordField;
+	private JCheckBox chckbxSpezifiziereLogin;
 	private JTextField textField;
 	private JTextField textField_1;
-	private JPasswordField passwordField;
-
 	/**
 	 * Launch the application.
 	 */
@@ -72,11 +75,7 @@ public class Login extends JFrame {
 		contentPane.add(lblKennwort);
 		
 		JButton btnLogin = new JButton("Login");
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// Login prüfen und ESTM starten
-			}
-		});
+		btnLogin.addActionListener(this);
 		btnLogin.setBounds(45, 261, 150, 28);
 		contentPane.add(btnLogin);
 		
@@ -84,9 +83,17 @@ public class Login extends JFrame {
 		passwordField.setBounds(47, 181, 148, 20);
 		contentPane.add(passwordField);
 		
-		JCheckBox chckbxSpezifiziereLogin = new JCheckBox("Default Server");
+		chckbxSpezifiziereLogin = new JCheckBox("Default Server");
 		chckbxSpezifiziereLogin.setSelected(true);
 		chckbxSpezifiziereLogin.setBounds(45, 217, 150, 23);
 		contentPane.add(chckbxSpezifiziereLogin);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		Verbindung verbindung = new Verbindung();
+		ResultSet = verbindung.query("SELECT * FROM personen WHERE name='"+textField.getText()+"' AND vorname='"+lblVorname.getText()+"' AND kennwort='"+lblKennwort.getText()+"'");
+		Person person = new Person(rs.getString("name"),
+				rs.getString("vorname"), rs.getInt("ID"),
+				rs.getString("status"));
 	}
 }
