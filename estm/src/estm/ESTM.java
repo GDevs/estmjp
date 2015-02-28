@@ -220,7 +220,7 @@ public class ESTM {
 			for (String termin : termine){
 				String t[];
 				//System.out.println(termin);
-				t = termin.split("\\$|#");
+				t = termin.split("\\$|#| ");
 				System.out.println(" Termin: " + t[1] + " Lehrer: " +  t[2] + " Elter: " + t[3]);
 			}
 			
