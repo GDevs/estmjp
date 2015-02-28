@@ -26,8 +26,8 @@ public class Person {
 	
 	public List<Termin> getTermine(){return termine;}
 	
-	public void addTermin(){
-		
+	public void addTermin(Termin t){
+		termine.add(t)
 	}
 	
 	public String getStatus(){return status;}

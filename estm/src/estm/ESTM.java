@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -112,8 +113,54 @@ public class ESTM {
      * @return
      */
     private boolean parse(ResultSet rs){
-		return false;
-    	// HIER bitte den PARSER Adrian :-)
-    	// darfst gerne das system mit dem processer und dem parser anpassen ;-) :D
+		//return false;
+    	
+		ResultSetMetaData rsmd;
+		try {
+			rsmd = rs.getMetaData();
+			if(rsmd.getTableName(0).equals("personen")){
+				eltern.clear();
+				lehrer.clear();
+				Person person = new Person(rs.getString("name"),rs.getString("vorname"),rs.getInt("ID"),rs.getString("status"));
+				if(person.getStatus().equals("L")){
+					lehrer.add(person);
+			    }else if(person.getStatus().equals("E")){
+			    	eltern.add(person);
+			    }
+			}
+			if(rsmd.getTableName(0).equals("termine")){
+				Person pElter = null;
+				int person1ID = rs.getInt("person1");
+				Person pLehrer = null;
+				int person2ID = rs.getInt("person2");
+				for(Person p:eltern){
+					if(p.getID()==person1ID||p.getID()==person2ID){
+						if(p.getStatus().equals("E")){
+							pElter=p;
+						}else{
+							pLehrer = p;
+						}
+					}
+				}
+				for(Person p:lehrer){
+					if(p.getID()==person1ID||p.getID()==person2ID){
+						if(p.getStatus().equals("E")){
+							pElter=p;
+						}else{
+							pLehrer = p;
+						}
+					}
+				}
+				if(pElter==null || pLehrer== null){return false;}//Wenn eine der Personen nicht gefunden werden konnte, wird abgebrochen
+				Termin termin = new Termin(rs.getInt("zeitpunkt"),pElter , pLehrer);
+				pElter.addTermin(termin);
+				pLehrer.addTermin(termin);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
     }
 }
