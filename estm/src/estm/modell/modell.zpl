@@ -9,10 +9,14 @@ set E := {read "test3.dat" as "<2s>" match "^Elter:" comment "#"};
 #Termine
 set T := {read "test3.dat" as "<2n>" match "^Termin:" comment "#"};
 
+#do print L;
+#do print E;
+#do print T;
+
 #Wünsche <Termin, Lehrer, Elter>
 param w[L*E] := read "test3.dat" as "<2s,3s> 4n" match "^Wunsch:" comment "#" default 0;
 
-do forall <i> in L: forall <j> in E: print i , " ", j, " ", w[i,j];
+#do forall <i> in L: forall <j> in E: print i , " ", j, " ", w[i,j];
 
 #Zuweisung
 set TxLxE := T * L  * E;
@@ -21,9 +25,7 @@ set TxLxE := T * L  * E;
 var x[TxLxE] binary ;
  
 defnumb wun(j,k) := if w[j,k] != 0 then 1 else 0 end ;
-do print wun("L1","E1");
-do print wun("L1","E2");
-do print wun("L2","E1");
+
 #Kosten
 minimize cost: sum <i,j,k> in TxLxE: ((wun(j,k) * -1) * (1/(abs(w[j,k]-i)+ 1))  *  x[i,j,k]);
 

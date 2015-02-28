@@ -41,7 +41,8 @@ public class Test {
 		Person p = new Person("Peter", "Enis", 01, "SUPAADMIN");
 		ESTM estm = new ESTM(conn, p);
 
-		estm.initialize();
+		//estm.initialize();
+		estm.parseLpSol(1);
 	}
 
 }

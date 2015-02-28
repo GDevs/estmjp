@@ -25,7 +25,7 @@ public class LPTest {
 		int ID;
 		String status;
 		int i;
-		for (int j = 1; j <= 20; j++){
+		for (int j = 1; j <= 50; j++){
 			termine.add(j);
 		}
 		
@@ -36,7 +36,7 @@ public class LPTest {
 			status = "L";
 			personen.add(new Person(name, vorname, ID, status));
 		}
-		for (i = 51; i <= 350; i++){
+		for (i = 51; i <= 950; i++){
 			name = "Enach" + i;
 			vorname = "Evor" + i;
 			ID = i;
@@ -47,7 +47,7 @@ public class LPTest {
 		for (Person j : personen){
 			if (j.getStatus().equals("E")){
 				for (int k = 0; k <= 2; k++){
-					wünsche.add(new Termin(random.nextInt(21), j, getRandomLehrer()));
+					wünsche.add(new Termin(random.nextInt(4) + 1, j, getRandomLehrer()));
 				}
 			}
 		}
@@ -57,15 +57,15 @@ public class LPTest {
 
 	private static void writeToDat() {
 		try {
-			PrintWriter writer = new PrintWriter("F:/source/estmjp/estm/src/estm/modell/test3.dat", "UTF-8");
+			PrintWriter writer = new PrintWriter("F:/source/estmjp/estm/src/estm/modell/test3.dat", "ASCII");
 			for (Person i : personen){
 				
 				if(i.getStatus().equals("E")){
-					writer.println(i.getStatus() + ": E"+ i.getID());
-					System.out.println("Elter: E"+ i.getID());
+					writer.println("Elter: E"+ i.getID());
+					System.out.println("Elter: Elter"+ i.getID());
 				} else {
-					writer.println(i.getStatus() + ": E"+ i.getID());
-					System.out.println("Lehrer: L"+ i.getID());
+					writer.println("Lehrer: L"+ i.getID());
+					System.out.println("Lehrer: "+ i.getID());
 				}
 				
 			}
@@ -87,7 +87,7 @@ public class LPTest {
 
 	private static Person getRandomLehrer() {
 		Random random = new Random();
-		int rn = random.nextInt((50-0) + 1) + 0;
+		int rn = random.nextInt((5-0)) + 0;
 		
 		return personen.get(rn);
 	}

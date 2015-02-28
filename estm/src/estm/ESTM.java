@@ -6,7 +6,12 @@ package estm;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -196,5 +201,34 @@ public class ESTM {
 		}
 		return true;
 	}
+	
+	/**
+	 * Übersetzt die ausgabe Datei des LP solvers in die relationale Datenbankstruktur
+	 */
+	public void parseLpSol(int version){
+		try {
+			List<String> termine = new ArrayList<String>(); 
+			BufferedReader br;
+			br = new BufferedReader(new FileReader(
+					"F:/source/estmjp/estm/src/estm/modell/solution.dat"));
+			
+			String sCurrentLine;
+			while ((sCurrentLine = br.readLine()) != null) {
+				termine.add(sCurrentLine);
+			}
+			
+			for (String termin : termine){
+				String t[];
+				//System.out.println(termin);
+				t = termin.split("\\$|#");
+				System.out.println(" Termin: " + t[1] + " Lehrer: " +  t[2] + " Elter: " + t[3]);
+			}
+			
+			br.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
+	}
 }
