@@ -1,35 +1,35 @@
 Lehrer:	L1
 Lehrer: L2
 Lehrer: L3
-Lehrer: L4
-Lehrer: L5
-Lehrer: L6
-Lehrer: L7
-Lehrer: L8
-Lehrer: L9
-Lehrer: L10
+#Lehrer: L4
+#Lehrer: L5
+#Lehrer: L6
+#Lehrer: L7
+#Lehrer: L8
+#Lehrer: L9
+#Lehrer: L10
 
 Termin: 1
 Termin: 2
 Termin: 3
-Termin: 4
-Termin: 5
-Termin: 6
-Termin: 7
-Termin: 8
-Termin: 9
-Termin: 10
+#Termin: 4
+#Termin: 5
+#Termin: 6
+# Termin: 7
+# Termin: 8
+# Termin: 9
+# Termin: 10
 
 Elter: E1
 Elter: E2
 Elter: E3
-Elter: E4
-Elter: E5
-Elter: E6
-Elter: E7
-Elter: E8
-Elter: E9
-Elter: E10
+# Elter: E4
+# Elter: E5
+# Elter: E6
+# Elter: E7
+# Elter: E8
+# Elter: E9
+# Elter: E10
 
 Wunsch: L1 E2 1
 Wunsch: L1 E1 1

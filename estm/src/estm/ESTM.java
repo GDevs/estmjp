@@ -111,9 +111,10 @@ public class ESTM {
      * 
      * @return
      */
-    private boolean parse(ResultSet rs){
+    private boolean mapping(ResultSet rs){
 		return false;
     	// HIER bitte den PARSER Adrian :-)
-    	// darfst gerne das system mit dem processer und dem parser anpassen ;-) :D
+		// sorry es heißt maüüing wenn man eine datenbank in objekte überführt
+    	// darfst gerne das system mit dem processer und dem mapping anpassen ;-) :D
     }
 }
