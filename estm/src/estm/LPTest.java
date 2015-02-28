@@ -11,12 +11,18 @@ public class LPTest {
 	private static List<Person> personen;
 	private static List<Termin> wünsche;
 	private static List<Integer> termine; 
+	private static int tz = 20;
+	private static int lz = 30;
+	private static int ez = 300;
+	private static int wnpe = 2;
 	
 	public LPTest() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	public static void main(String args[]){
+
+		
 		personen = new ArrayList<Person>();
 		wünsche = new ArrayList<Termin>();
 		termine = new ArrayList<Integer>();
@@ -25,34 +31,39 @@ public class LPTest {
 		int ID;
 		String status;
 		int i;
-		for (int j = 1; j <= 50; j++){
+		for (int j = 1; j <= tz; j++){
 			termine.add(j);
 		}
 		
-		for (i = 1; i <= 50; i++){
+		for (i = 1; i <= lz; i++){
 			name = "Lnach" + i;
 			vorname = "Lvor" + i;
 			ID = i;
 			status = "L";
 			personen.add(new Person(name, vorname, ID, status));
 		}
-		for (i = 51; i <= 950; i++){
+		for (i = lz + 1; i <= ez+lz; i++){
 			name = "Enach" + i;
 			vorname = "Evor" + i;
 			ID = i;
 			status = "E";
 			personen.add(new Person(name, vorname, ID, status));
 		}
-		Random random = new Random();
+
 		for (Person j : personen){
 			if (j.getStatus().equals("E")){
-				for (int k = 0; k <= 2; k++){
-					wünsche.add(new Termin(random.nextInt(4) + 1, j, getRandomLehrer()));
+				for (int k = 1; k <= wnpe; k++){
+					wünsche.add(new Termin(getRandomTermin(), j, getRandomLehrer()));
 				}
 			}
 		}
 		
 		writeToDat();
+	}
+
+	private static int getRandomTermin() {
+		Random random = new Random();
+		return random.nextInt(tz)+1;
 	}
 
 	private static void writeToDat() {
@@ -61,10 +72,10 @@ public class LPTest {
 			for (Person i : personen){
 				
 				if(i.getStatus().equals("E")){
-					writer.println("Elter: E"+ i.getID());
+					writer.println("Elter: "+ i.getID());
 					System.out.println("Elter: Elter"+ i.getID());
 				} else {
-					writer.println("Lehrer: L"+ i.getID());
+					writer.println("Lehrer: "+ i.getID());
 					System.out.println("Lehrer: "+ i.getID());
 				}
 				
@@ -73,7 +84,7 @@ public class LPTest {
 				writer.println("Termin: " + i);
 			}
 			for (Termin i : wünsche){
-				writer.println("Wunsch: L" + i.getLehrer().getID() + " E" + i.getElter().getID() + " " + i.getZeitschiene());
+				writer.println("Wunsch: " + i.getLehrer().getID() + " " + i.getElter().getID() + " " + i.getZeitschiene());
 			}
 			writer.close();
 		} catch (Exception e) {
@@ -87,9 +98,32 @@ public class LPTest {
 
 	private static Person getRandomLehrer() {
 		Random random = new Random();
-		int rn = random.nextInt((5-0)) + 0;
+		int rn = random.nextInt((lz-0)) + 0;
 		
 		return personen.get(rn);
+	}
+	
+	private static void writeUsrsToDat(){
+		try {
+			PrintWriter writer = new PrintWriter("F:/source/estmjp/estm/src/estm/usrs.dat", "ASCII");
+			for (Person i : personen){
+				if(i.getStatus().equals("E")){
+					writer.println(i.getID() + ";" + i.getName() + ";" + i.getVorname() + ";" + 0 + ";" + i.getStatus() + ";" + "default");
+					System.out.println("Elter: Elter"+ i.getID());
+				} else {
+					writer.println("Lehrer: "+ i.getID());
+					System.out.println("Lehrer: "+ i.getID());
+				}
+				
+			}
+			writer.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//writer.println("The first line");
+		
+		System.out.println("DONE");
 	}
 
 }

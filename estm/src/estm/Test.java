@@ -34,7 +34,7 @@ public class Test {
         }
         Connection conn = null;
 		try{
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/mysql", "root", "toor");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/estm", "root", "toor");
         } catch (SQLException ex) {
             System.out.println("Fehler beim Aufbau der Verbindung!");
         }
@@ -42,7 +42,7 @@ public class Test {
 		ESTM estm = new ESTM(conn, p);
 
 		//estm.initialize();
-		estm.parseLpSol(1);
+		estm.parseLpSol(2);
 	}
 
 }

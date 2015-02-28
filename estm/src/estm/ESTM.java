@@ -207,6 +207,9 @@ public class ESTM {
 	 */
 	public void parseLpSol(int version){
 		try {
+			Statement stmt = conn.createStatement();
+			stmt.execute("DELETE FROM `termine` WHERE `version`=" + version);
+			
 			List<String> termine = new ArrayList<String>(); 
 			BufferedReader br;
 			br = new BufferedReader(new FileReader(
@@ -222,6 +225,50 @@ public class ESTM {
 				//System.out.println(termin);
 				t = termin.split("\\$|#| ");
 				System.out.println(" Termin: " + t[1] + " Lehrer: " +  t[2] + " Elter: " + t[3]);
+				if(t[0].equals("x")){
+					String q = "INSERT INTO termine(person1, person2, zeitpunkt, version) "
+							+ "VALUES(" + t[2] + "," + t[3] + "," + t[1] + "," + version + ");";
+					System.out.println(q);
+					System.out.println("sql query erfolgreich");
+					//Statement stmt = conn.createStatement();
+					stmt.execute(q);
+				}
+			}
+			
+			br.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void addUsrFromFile(String path){
+		try {
+			List<String> personen = new ArrayList<String>(); 
+			BufferedReader br;
+			br = new BufferedReader(new FileReader(
+					"F:/source/estmjp/estm/src/estm/modell/solution.dat"));
+			
+			String sCurrentLine;
+			while ((sCurrentLine = br.readLine()) != null) {
+				personen.add(sCurrentLine);
+			}
+			Statement stmt = conn.createStatement();
+			
+			for (String person : personen){
+				String t[];
+				//System.out.println(termin);
+				t = person.split(";");
+				//System.out.println(" Termin: " + t[1] + " Lehrer: " +  t[2] + " Elter: " + t[3]);
+				if(!t[0].equals("#")){
+					String q = "INSERT INTO personen(ID, name, vorname, rechte, status, kennwort) "
+							+ "VALUES(" + t[0] + "," + t[1] + "," + t[2] + "," + t[3] + "," + 
+							t[4] + "," + t[5] +");";
+					System.out.println(q);
+					System.out.println("sql query erfolgreich");		
+					stmt.execute(q);
+				}
 			}
 			
 			br.close();
