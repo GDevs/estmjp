@@ -112,7 +112,7 @@ public class ESTM {
      * 
      * @return
      */
-    private boolean parse(ResultSet rs){
+    private boolean mapping(ResultSet rs){
 		//return false;
     	
 		ResultSetMetaData rsmd;
@@ -162,5 +162,8 @@ public class ESTM {
 			return false;
 		}
 		return true;
-    }
+     }
+
+}
+ }
 }
