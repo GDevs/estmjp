@@ -1,0 +1,1250 @@
+L: 0
+L: 1
+L: 2
+L: 3
+L: 4
+L: 5
+L: 6
+L: 7
+L: 8
+L: 9
+L: 10
+L: 11
+L: 12
+L: 13
+L: 14
+L: 15
+L: 16
+L: 17
+L: 18
+L: 19
+L: 20
+L: 21
+L: 22
+L: 23
+L: 24
+L: 25
+L: 26
+L: 27
+L: 28
+L: 29
+L: 30
+L: 31
+L: 32
+L: 33
+L: 34
+L: 35
+L: 36
+L: 37
+L: 38
+L: 39
+L: 40
+L: 41
+L: 42
+L: 43
+L: 44
+L: 45
+L: 46
+L: 47
+L: 48
+L: 49
+E: 50
+E: 51
+E: 52
+E: 53
+E: 54
+E: 55
+E: 56
+E: 57
+E: 58
+E: 59
+E: 60
+E: 61
+E: 62
+E: 63
+E: 64
+E: 65
+E: 66
+E: 67
+E: 68
+E: 69
+E: 70
+E: 71
+E: 72
+E: 73
+E: 74
+E: 75
+E: 76
+E: 77
+E: 78
+E: 79
+E: 80
+E: 81
+E: 82
+E: 83
+E: 84
+E: 85
+E: 86
+E: 87
+E: 88
+E: 89
+E: 90
+E: 91
+E: 92
+E: 93
+E: 94
+E: 95
+E: 96
+E: 97
+E: 98
+E: 99
+E: 100
+E: 101
+E: 102
+E: 103
+E: 104
+E: 105
+E: 106
+E: 107
+E: 108
+E: 109
+E: 110
+E: 111
+E: 112
+E: 113
+E: 114
+E: 115
+E: 116
+E: 117
+E: 118
+E: 119
+E: 120
+E: 121
+E: 122
+E: 123
+E: 124
+E: 125
+E: 126
+E: 127
+E: 128
+E: 129
+E: 130
+E: 131
+E: 132
+E: 133
+E: 134
+E: 135
+E: 136
+E: 137
+E: 138
+E: 139
+E: 140
+E: 141
+E: 142
+E: 143
+E: 144
+E: 145
+E: 146
+E: 147
+E: 148
+E: 149
+E: 150
+E: 151
+E: 152
+E: 153
+E: 154
+E: 155
+E: 156
+E: 157
+E: 158
+E: 159
+E: 160
+E: 161
+E: 162
+E: 163
+E: 164
+E: 165
+E: 166
+E: 167
+E: 168
+E: 169
+E: 170
+E: 171
+E: 172
+E: 173
+E: 174
+E: 175
+E: 176
+E: 177
+E: 178
+E: 179
+E: 180
+E: 181
+E: 182
+E: 183
+E: 184
+E: 185
+E: 186
+E: 187
+E: 188
+E: 189
+E: 190
+E: 191
+E: 192
+E: 193
+E: 194
+E: 195
+E: 196
+E: 197
+E: 198
+E: 199
+E: 200
+E: 201
+E: 202
+E: 203
+E: 204
+E: 205
+E: 206
+E: 207
+E: 208
+E: 209
+E: 210
+E: 211
+E: 212
+E: 213
+E: 214
+E: 215
+E: 216
+E: 217
+E: 218
+E: 219
+E: 220
+E: 221
+E: 222
+E: 223
+E: 224
+E: 225
+E: 226
+E: 227
+E: 228
+E: 229
+E: 230
+E: 231
+E: 232
+E: 233
+E: 234
+E: 235
+E: 236
+E: 237
+E: 238
+E: 239
+E: 240
+E: 241
+E: 242
+E: 243
+E: 244
+E: 245
+E: 246
+E: 247
+E: 248
+E: 249
+E: 250
+E: 251
+E: 252
+E: 253
+E: 254
+E: 255
+E: 256
+E: 257
+E: 258
+E: 259
+E: 260
+E: 261
+E: 262
+E: 263
+E: 264
+E: 265
+E: 266
+E: 267
+E: 268
+E: 269
+E: 270
+E: 271
+E: 272
+E: 273
+E: 274
+E: 275
+E: 276
+E: 277
+E: 278
+E: 279
+E: 280
+E: 281
+E: 282
+E: 283
+E: 284
+E: 285
+E: 286
+E: 287
+E: 288
+E: 289
+E: 290
+E: 291
+E: 292
+E: 293
+E: 294
+E: 295
+E: 296
+E: 297
+E: 298
+E: 299
+E: 300
+E: 301
+E: 302
+E: 303
+E: 304
+E: 305
+E: 306
+E: 307
+E: 308
+E: 309
+E: 310
+E: 311
+E: 312
+E: 313
+E: 314
+E: 315
+E: 316
+E: 317
+E: 318
+E: 319
+E: 320
+E: 321
+E: 322
+E: 323
+E: 324
+E: 325
+E: 326
+E: 327
+E: 328
+E: 329
+E: 330
+E: 331
+E: 332
+E: 333
+E: 334
+E: 335
+E: 336
+E: 337
+E: 338
+E: 339
+E: 340
+E: 341
+E: 342
+E: 343
+E: 344
+E: 345
+E: 346
+E: 347
+E: 348
+E: 349
+Termin: 10 50 1
+Termin: 17 50 14
+Termin: 45 50 14
+Termin: 13 51 13
+Termin: 2 51 4
+Termin: 39 51 2
+Termin: 40 52 14
+Termin: 4 52 11
+Termin: 19 52 15
+Termin: 21 53 6
+Termin: 7 53 8
+Termin: 14 53 12
+Termin: 29 54 5
+Termin: 48 54 1
+Termin: 12 54 0
+Termin: 37 55 8
+Termin: 34 55 0
+Termin: 10 55 14
+Termin: 41 56 8
+Termin: 36 56 3
+Termin: 11 56 16
+Termin: 29 57 4
+Termin: 49 57 8
+Termin: 46 57 16
+Termin: 39 58 17
+Termin: 27 58 6
+Termin: 14 58 10
+Termin: 42 59 12
+Termin: 46 59 11
+Termin: 8 59 7
+Termin: 9 60 4
+Termin: 48 60 12
+Termin: 16 60 12
+Termin: 8 61 19
+Termin: 2 61 17
+Termin: 42 61 3
+Termin: 6 62 16
+Termin: 50 62 14
+Termin: 17 62 2
+Termin: 37 63 12
+Termin: 24 63 6
+Termin: 29 63 17
+Termin: 11 64 14
+Termin: 31 64 13
+Termin: 47 64 10
+Termin: 5 65 17
+Termin: 8 65 3
+Termin: 15 65 18
+Termin: 35 66 11
+Termin: 8 66 8
+Termin: 36 66 8
+Termin: 12 67 0
+Termin: 1 67 2
+Termin: 19 67 11
+Termin: 36 68 14
+Termin: 36 68 19
+Termin: 44 68 8
+Termin: 37 69 6
+Termin: 2 69 7
+Termin: 10 69 18
+Termin: 14 70 18
+Termin: 12 70 7
+Termin: 37 70 19
+Termin: 41 71 9
+Termin: 22 71 19
+Termin: 36 71 4
+Termin: 9 72 8
+Termin: 19 72 14
+Termin: 22 72 14
+Termin: 15 73 15
+Termin: 27 73 7
+Termin: 32 73 5
+Termin: 35 74 4
+Termin: 44 74 6
+Termin: 45 74 20
+Termin: 47 75 19
+Termin: 22 75 1
+Termin: 50 75 12
+Termin: 3 76 0
+Termin: 11 76 2
+Termin: 1 76 8
+Termin: 15 77 19
+Termin: 0 77 12
+Termin: 45 77 4
+Termin: 14 78 19
+Termin: 42 78 10
+Termin: 12 78 10
+Termin: 27 79 15
+Termin: 7 79 3
+Termin: 23 79 1
+Termin: 14 80 4
+Termin: 30 80 20
+Termin: 45 80 14
+Termin: 39 81 4
+Termin: 38 81 2
+Termin: 21 81 0
+Termin: 22 82 0
+Termin: 11 82 4
+Termin: 17 82 20
+Termin: 2 83 20
+Termin: 20 83 3
+Termin: 31 83 1
+Termin: 14 84 11
+Termin: 48 84 20
+Termin: 38 84 12
+Termin: 20 85 9
+Termin: 17 85 12
+Termin: 19 85 20
+Termin: 8 86 17
+Termin: 11 86 13
+Termin: 40 86 3
+Termin: 30 87 6
+Termin: 0 87 6
+Termin: 8 87 10
+Termin: 15 88 1
+Termin: 29 88 2
+Termin: 2 88 9
+Termin: 17 89 9
+Termin: 32 89 5
+Termin: 22 89 8
+Termin: 46 90 11
+Termin: 18 90 7
+Termin: 36 90 2
+Termin: 34 91 5
+Termin: 25 91 17
+Termin: 9 91 6
+Termin: 40 92 5
+Termin: 8 92 10
+Termin: 45 92 18
+Termin: 4 93 18
+Termin: 34 93 10
+Termin: 1 93 8
+Termin: 19 94 4
+Termin: 12 94 7
+Termin: 10 94 18
+Termin: 25 95 17
+Termin: 15 95 20
+Termin: 18 95 18
+Termin: 37 96 0
+Termin: 30 96 20
+Termin: 4 96 15
+Termin: 29 97 16
+Termin: 26 97 18
+Termin: 18 97 5
+Termin: 0 98 8
+Termin: 39 98 11
+Termin: 35 98 3
+Termin: 50 99 19
+Termin: 7 99 13
+Termin: 30 99 20
+Termin: 16 100 15
+Termin: 34 100 2
+Termin: 44 100 4
+Termin: 41 101 2
+Termin: 20 101 1
+Termin: 34 101 14
+Termin: 5 102 15
+Termin: 31 102 9
+Termin: 9 102 2
+Termin: 5 103 17
+Termin: 4 103 19
+Termin: 4 103 15
+Termin: 49 104 2
+Termin: 37 104 13
+Termin: 40 104 2
+Termin: 4 105 17
+Termin: 9 105 14
+Termin: 40 105 16
+Termin: 29 106 1
+Termin: 7 106 10
+Termin: 2 106 7
+Termin: 45 107 5
+Termin: 50 107 10
+Termin: 25 107 3
+Termin: 8 108 16
+Termin: 31 108 16
+Termin: 31 108 14
+Termin: 3 109 11
+Termin: 44 109 15
+Termin: 2 109 10
+Termin: 47 110 12
+Termin: 48 110 8
+Termin: 16 110 12
+Termin: 30 111 10
+Termin: 16 111 19
+Termin: 39 111 6
+Termin: 10 112 12
+Termin: 38 112 13
+Termin: 15 112 11
+Termin: 20 113 12
+Termin: 20 113 11
+Termin: 17 113 13
+Termin: 13 114 19
+Termin: 39 114 12
+Termin: 32 114 14
+Termin: 9 115 3
+Termin: 28 115 9
+Termin: 14 115 10
+Termin: 42 116 0
+Termin: 5 116 18
+Termin: 23 116 2
+Termin: 41 117 15
+Termin: 28 117 15
+Termin: 36 117 18
+Termin: 7 118 9
+Termin: 32 118 6
+Termin: 22 118 16
+Termin: 15 119 1
+Termin: 13 119 3
+Termin: 7 119 20
+Termin: 21 120 8
+Termin: 47 120 5
+Termin: 6 120 12
+Termin: 39 121 0
+Termin: 50 121 10
+Termin: 14 121 15
+Termin: 26 122 5
+Termin: 50 122 8
+Termin: 23 122 10
+Termin: 42 123 16
+Termin: 49 123 6
+Termin: 43 123 5
+Termin: 40 124 5
+Termin: 11 124 6
+Termin: 7 124 9
+Termin: 44 125 19
+Termin: 2 125 5
+Termin: 6 125 9
+Termin: 39 126 11
+Termin: 27 126 4
+Termin: 1 126 9
+Termin: 41 127 0
+Termin: 25 127 15
+Termin: 32 127 5
+Termin: 50 128 4
+Termin: 39 128 0
+Termin: 24 128 4
+Termin: 13 129 0
+Termin: 10 129 17
+Termin: 33 129 17
+Termin: 7 130 7
+Termin: 8 130 12
+Termin: 19 130 7
+Termin: 40 131 15
+Termin: 16 131 9
+Termin: 9 131 10
+Termin: 45 132 12
+Termin: 14 132 20
+Termin: 19 132 3
+Termin: 35 133 4
+Termin: 31 133 4
+Termin: 5 133 19
+Termin: 2 134 12
+Termin: 2 134 10
+Termin: 18 134 3
+Termin: 22 135 14
+Termin: 45 135 19
+Termin: 41 135 19
+Termin: 5 136 2
+Termin: 33 136 5
+Termin: 3 136 7
+Termin: 49 137 19
+Termin: 30 137 9
+Termin: 46 137 16
+Termin: 29 138 3
+Termin: 40 138 11
+Termin: 43 138 15
+Termin: 48 139 13
+Termin: 39 139 17
+Termin: 7 139 13
+Termin: 39 140 20
+Termin: 39 140 1
+Termin: 40 140 11
+Termin: 10 141 4
+Termin: 38 141 4
+Termin: 29 141 20
+Termin: 23 142 3
+Termin: 16 142 13
+Termin: 5 142 4
+Termin: 25 143 17
+Termin: 33 143 19
+Termin: 40 143 0
+Termin: 29 144 5
+Termin: 45 144 12
+Termin: 14 144 19
+Termin: 28 145 19
+Termin: 30 145 18
+Termin: 31 145 1
+Termin: 23 146 9
+Termin: 34 146 12
+Termin: 20 146 14
+Termin: 16 147 4
+Termin: 33 147 7
+Termin: 12 147 13
+Termin: 14 148 10
+Termin: 14 148 16
+Termin: 31 148 11
+Termin: 5 149 15
+Termin: 45 149 2
+Termin: 5 149 12
+Termin: 38 150 16
+Termin: 11 150 15
+Termin: 0 150 12
+Termin: 7 151 4
+Termin: 50 151 14
+Termin: 25 151 12
+Termin: 46 152 1
+Termin: 17 152 10
+Termin: 29 152 14
+Termin: 43 153 20
+Termin: 27 153 1
+Termin: 34 153 10
+Termin: 20 154 4
+Termin: 35 154 9
+Termin: 3 154 6
+Termin: 20 155 2
+Termin: 35 155 0
+Termin: 27 155 14
+Termin: 8 156 11
+Termin: 8 156 16
+Termin: 15 156 6
+Termin: 25 157 5
+Termin: 44 157 17
+Termin: 50 157 14
+Termin: 29 158 20
+Termin: 37 158 8
+Termin: 19 158 14
+Termin: 24 159 17
+Termin: 10 159 14
+Termin: 3 159 15
+Termin: 46 160 10
+Termin: 2 160 20
+Termin: 48 160 0
+Termin: 33 161 19
+Termin: 15 161 9
+Termin: 7 161 15
+Termin: 33 162 5
+Termin: 8 162 5
+Termin: 12 162 11
+Termin: 41 163 20
+Termin: 40 163 19
+Termin: 42 163 10
+Termin: 26 164 4
+Termin: 34 164 7
+Termin: 30 164 7
+Termin: 15 165 17
+Termin: 30 165 6
+Termin: 6 165 0
+Termin: 11 166 16
+Termin: 29 166 1
+Termin: 46 166 19
+Termin: 4 167 6
+Termin: 39 167 1
+Termin: 16 167 15
+Termin: 19 168 6
+Termin: 23 168 16
+Termin: 4 168 9
+Termin: 31 169 14
+Termin: 15 169 7
+Termin: 36 169 5
+Termin: 6 170 17
+Termin: 34 170 17
+Termin: 43 170 0
+Termin: 8 171 7
+Termin: 9 171 20
+Termin: 8 171 18
+Termin: 28 172 20
+Termin: 37 172 19
+Termin: 13 172 3
+Termin: 10 173 5
+Termin: 21 173 19
+Termin: 43 173 17
+Termin: 22 174 1
+Termin: 38 174 0
+Termin: 50 174 14
+Termin: 21 175 12
+Termin: 32 175 17
+Termin: 7 175 8
+Termin: 43 176 20
+Termin: 9 176 0
+Termin: 5 176 18
+Termin: 19 177 5
+Termin: 17 177 6
+Termin: 26 177 0
+Termin: 8 178 8
+Termin: 19 178 15
+Termin: 32 178 10
+Termin: 18 179 1
+Termin: 32 179 5
+Termin: 49 179 12
+Termin: 44 180 12
+Termin: 2 180 12
+Termin: 50 180 0
+Termin: 27 181 14
+Termin: 24 181 15
+Termin: 34 181 3
+Termin: 50 182 14
+Termin: 15 182 13
+Termin: 3 182 13
+Termin: 21 183 20
+Termin: 39 183 20
+Termin: 42 183 13
+Termin: 31 184 13
+Termin: 5 184 14
+Termin: 49 184 16
+Termin: 20 185 5
+Termin: 18 185 11
+Termin: 29 185 8
+Termin: 9 186 16
+Termin: 43 186 6
+Termin: 23 186 17
+Termin: 28 187 16
+Termin: 12 187 20
+Termin: 22 187 5
+Termin: 27 188 6
+Termin: 48 188 8
+Termin: 25 188 1
+Termin: 6 189 2
+Termin: 5 189 5
+Termin: 48 189 3
+Termin: 47 190 10
+Termin: 49 190 14
+Termin: 41 190 10
+Termin: 25 191 13
+Termin: 34 191 15
+Termin: 0 191 0
+Termin: 6 192 4
+Termin: 3 192 2
+Termin: 15 192 9
+Termin: 11 193 9
+Termin: 31 193 6
+Termin: 31 193 19
+Termin: 45 194 16
+Termin: 19 194 10
+Termin: 18 194 3
+Termin: 34 195 2
+Termin: 29 195 9
+Termin: 45 195 18
+Termin: 36 196 7
+Termin: 1 196 5
+Termin: 12 196 8
+Termin: 32 197 11
+Termin: 45 197 10
+Termin: 39 197 20
+Termin: 48 198 13
+Termin: 21 198 17
+Termin: 40 198 18
+Termin: 44 199 7
+Termin: 0 199 12
+Termin: 47 199 19
+Termin: 15 200 14
+Termin: 29 200 8
+Termin: 35 200 18
+Termin: 14 201 12
+Termin: 12 201 7
+Termin: 24 201 19
+Termin: 18 202 5
+Termin: 19 202 7
+Termin: 39 202 4
+Termin: 26 203 4
+Termin: 27 203 9
+Termin: 1 203 5
+Termin: 9 204 0
+Termin: 10 204 5
+Termin: 1 204 3
+Termin: 18 205 15
+Termin: 38 205 11
+Termin: 5 205 6
+Termin: 23 206 16
+Termin: 45 206 19
+Termin: 43 206 17
+Termin: 4 207 13
+Termin: 15 207 10
+Termin: 35 207 6
+Termin: 28 208 5
+Termin: 0 208 19
+Termin: 36 208 11
+Termin: 3 209 14
+Termin: 42 209 15
+Termin: 12 209 12
+Termin: 42 210 9
+Termin: 8 210 6
+Termin: 4 210 12
+Termin: 43 211 17
+Termin: 29 211 17
+Termin: 3 211 9
+Termin: 4 212 18
+Termin: 18 212 0
+Termin: 14 212 1
+Termin: 13 213 1
+Termin: 9 213 17
+Termin: 36 213 4
+Termin: 12 214 10
+Termin: 19 214 7
+Termin: 30 214 3
+Termin: 30 215 8
+Termin: 44 215 13
+Termin: 4 215 6
+Termin: 13 216 7
+Termin: 14 216 2
+Termin: 7 216 19
+Termin: 1 217 1
+Termin: 23 217 0
+Termin: 29 217 2
+Termin: 43 218 20
+Termin: 20 218 17
+Termin: 1 218 11
+Termin: 5 219 12
+Termin: 31 219 4
+Termin: 46 219 10
+Termin: 37 220 2
+Termin: 10 220 17
+Termin: 9 220 16
+Termin: 13 221 8
+Termin: 6 221 19
+Termin: 38 221 8
+Termin: 4 222 7
+Termin: 16 222 20
+Termin: 24 222 10
+Termin: 6 223 11
+Termin: 8 223 20
+Termin: 36 223 9
+Termin: 31 224 5
+Termin: 40 224 13
+Termin: 50 224 4
+Termin: 6 225 19
+Termin: 50 225 14
+Termin: 31 225 13
+Termin: 5 226 5
+Termin: 12 226 15
+Termin: 43 226 19
+Termin: 17 227 11
+Termin: 5 227 20
+Termin: 35 227 5
+Termin: 33 228 0
+Termin: 27 228 4
+Termin: 7 228 0
+Termin: 37 229 0
+Termin: 12 229 17
+Termin: 31 229 17
+Termin: 6 230 3
+Termin: 46 230 13
+Termin: 48 230 2
+Termin: 28 231 10
+Termin: 28 231 10
+Termin: 28 231 19
+Termin: 34 232 2
+Termin: 49 232 5
+Termin: 4 232 17
+Termin: 32 233 9
+Termin: 31 233 1
+Termin: 48 233 7
+Termin: 2 234 19
+Termin: 20 234 20
+Termin: 41 234 14
+Termin: 31 235 11
+Termin: 37 235 6
+Termin: 45 235 7
+Termin: 20 236 9
+Termin: 49 236 10
+Termin: 44 236 2
+Termin: 28 237 16
+Termin: 41 237 3
+Termin: 36 237 9
+Termin: 28 238 19
+Termin: 42 238 7
+Termin: 21 238 1
+Termin: 37 239 17
+Termin: 33 239 5
+Termin: 36 239 3
+Termin: 34 240 1
+Termin: 6 240 13
+Termin: 5 240 5
+Termin: 32 241 13
+Termin: 23 241 10
+Termin: 49 241 2
+Termin: 14 242 13
+Termin: 15 242 18
+Termin: 16 242 9
+Termin: 1 243 2
+Termin: 44 243 0
+Termin: 47 243 11
+Termin: 37 244 1
+Termin: 8 244 18
+Termin: 21 244 5
+Termin: 44 245 17
+Termin: 7 245 3
+Termin: 11 245 5
+Termin: 20 246 9
+Termin: 15 246 12
+Termin: 39 246 8
+Termin: 22 247 2
+Termin: 46 247 9
+Termin: 23 247 14
+Termin: 10 248 8
+Termin: 43 248 11
+Termin: 29 248 2
+Termin: 43 249 14
+Termin: 11 249 8
+Termin: 11 249 2
+Termin: 23 250 7
+Termin: 49 250 8
+Termin: 42 250 7
+Termin: 36 251 14
+Termin: 30 251 14
+Termin: 35 251 1
+Termin: 19 252 17
+Termin: 36 252 8
+Termin: 28 252 9
+Termin: 2 253 13
+Termin: 8 253 10
+Termin: 25 253 10
+Termin: 19 254 3
+Termin: 48 254 10
+Termin: 50 254 1
+Termin: 39 255 18
+Termin: 21 255 14
+Termin: 2 255 3
+Termin: 43 256 5
+Termin: 15 256 20
+Termin: 1 256 12
+Termin: 42 257 8
+Termin: 47 257 5
+Termin: 3 257 0
+Termin: 21 258 12
+Termin: 46 258 9
+Termin: 25 258 4
+Termin: 17 259 9
+Termin: 49 259 6
+Termin: 34 259 16
+Termin: 45 260 3
+Termin: 9 260 15
+Termin: 36 260 10
+Termin: 38 261 3
+Termin: 19 261 18
+Termin: 22 261 13
+Termin: 38 262 17
+Termin: 28 262 9
+Termin: 22 262 13
+Termin: 12 263 14
+Termin: 10 263 13
+Termin: 45 263 20
+Termin: 8 264 7
+Termin: 14 264 7
+Termin: 25 264 19
+Termin: 30 265 9
+Termin: 42 265 6
+Termin: 3 265 9
+Termin: 16 266 4
+Termin: 3 266 2
+Termin: 26 266 1
+Termin: 26 267 14
+Termin: 33 267 12
+Termin: 10 267 18
+Termin: 27 268 15
+Termin: 48 268 9
+Termin: 35 268 4
+Termin: 46 269 0
+Termin: 20 269 8
+Termin: 40 269 14
+Termin: 23 270 16
+Termin: 8 270 9
+Termin: 32 270 11
+Termin: 46 271 16
+Termin: 8 271 4
+Termin: 24 271 2
+Termin: 27 272 18
+Termin: 12 272 5
+Termin: 23 272 20
+Termin: 40 273 10
+Termin: 19 273 20
+Termin: 5 273 7
+Termin: 19 274 13
+Termin: 20 274 19
+Termin: 47 274 14
+Termin: 1 275 5
+Termin: 42 275 15
+Termin: 40 275 7
+Termin: 21 276 11
+Termin: 34 276 6
+Termin: 11 276 13
+Termin: 14 277 7
+Termin: 12 277 7
+Termin: 16 277 13
+Termin: 40 278 15
+Termin: 7 278 14
+Termin: 15 278 13
+Termin: 14 279 16
+Termin: 47 279 17
+Termin: 22 279 2
+Termin: 14 280 11
+Termin: 9 280 11
+Termin: 27 280 16
+Termin: 0 281 15
+Termin: 6 281 8
+Termin: 33 281 10
+Termin: 9 282 1
+Termin: 45 282 3
+Termin: 8 282 16
+Termin: 35 283 4
+Termin: 9 283 11
+Termin: 44 283 5
+Termin: 28 284 1
+Termin: 33 284 7
+Termin: 23 284 20
+Termin: 44 285 17
+Termin: 43 285 4
+Termin: 7 285 8
+Termin: 49 286 0
+Termin: 45 286 2
+Termin: 27 286 18
+Termin: 18 287 7
+Termin: 36 287 0
+Termin: 0 287 0
+Termin: 37 288 5
+Termin: 6 288 10
+Termin: 2 288 13
+Termin: 4 289 10
+Termin: 6 289 2
+Termin: 5 289 0
+Termin: 30 290 11
+Termin: 21 290 10
+Termin: 5 290 10
+Termin: 42 291 14
+Termin: 29 291 5
+Termin: 21 291 12
+Termin: 16 292 11
+Termin: 42 292 0
+Termin: 37 292 8
+Termin: 33 293 10
+Termin: 2 293 1
+Termin: 15 293 3
+Termin: 46 294 17
+Termin: 27 294 4
+Termin: 22 294 20
+Termin: 29 295 3
+Termin: 48 295 3
+Termin: 8 295 17
+Termin: 1 296 12
+Termin: 12 296 8
+Termin: 3 296 8
+Termin: 42 297 8
+Termin: 44 297 11
+Termin: 35 297 13
+Termin: 32 298 9
+Termin: 49 298 4
+Termin: 20 298 4
+Termin: 20 299 15
+Termin: 8 299 14
+Termin: 6 299 10
+Termin: 39 300 14
+Termin: 13 300 2
+Termin: 16 300 0
+Termin: 50 301 7
+Termin: 21 301 1
+Termin: 29 301 19
+Termin: 19 302 7
+Termin: 10 302 19
+Termin: 21 302 11
+Termin: 48 303 7
+Termin: 42 303 9
+Termin: 19 303 10
+Termin: 40 304 8
+Termin: 18 304 2
+Termin: 13 304 11
+Termin: 1 305 0
+Termin: 32 305 1
+Termin: 10 305 3
+Termin: 41 306 10
+Termin: 27 306 16
+Termin: 19 306 1
+Termin: 46 307 5
+Termin: 7 307 20
+Termin: 24 307 5
+Termin: 13 308 11
+Termin: 14 308 0
+Termin: 20 308 19
+Termin: 33 309 11
+Termin: 48 309 15
+Termin: 32 309 3
+Termin: 38 310 17
+Termin: 13 310 17
+Termin: 8 310 3
+Termin: 7 311 6
+Termin: 7 311 19
+Termin: 0 311 8
+Termin: 27 312 7
+Termin: 35 312 4
+Termin: 0 312 20
+Termin: 9 313 20
+Termin: 31 313 16
+Termin: 0 313 4
+Termin: 24 314 10
+Termin: 33 314 3
+Termin: 11 314 20
+Termin: 39 315 12
+Termin: 6 315 9
+Termin: 15 315 12
+Termin: 39 316 0
+Termin: 49 316 3
+Termin: 0 316 5
+Termin: 28 317 5
+Termin: 42 317 15
+Termin: 3 317 1
+Termin: 43 318 0
+Termin: 46 318 8
+Termin: 7 318 6
+Termin: 45 319 10
+Termin: 9 319 13
+Termin: 31 319 1
+Termin: 16 320 13
+Termin: 42 320 1
+Termin: 21 320 17
+Termin: 50 321 15
+Termin: 41 321 11
+Termin: 17 321 4
+Termin: 14 322 15
+Termin: 1 322 18
+Termin: 49 322 4
+Termin: 5 323 7
+Termin: 49 323 4
+Termin: 24 323 18
+Termin: 9 324 2
+Termin: 44 324 15
+Termin: 17 324 20
+Termin: 1 325 5
+Termin: 9 325 16
+Termin: 34 325 4
+Termin: 0 326 5
+Termin: 48 326 0
+Termin: 21 326 13
+Termin: 49 327 16
+Termin: 15 327 19
+Termin: 39 327 18
+Termin: 0 328 9
+Termin: 39 328 13
+Termin: 21 328 3
+Termin: 19 329 8
+Termin: 19 329 12
+Termin: 39 329 0
+Termin: 16 330 11
+Termin: 9 330 17
+Termin: 8 330 0
+Termin: 32 331 18
+Termin: 14 331 18
+Termin: 32 331 7
+Termin: 29 332 18
+Termin: 22 332 6
+Termin: 9 332 4
+Termin: 49 333 14
+Termin: 26 333 12
+Termin: 14 333 0
+Termin: 13 334 20
+Termin: 33 334 14
+Termin: 21 334 2
+Termin: 43 335 4
+Termin: 28 335 16
+Termin: 48 335 14
+Termin: 40 336 19
+Termin: 46 336 2
+Termin: 22 336 19
+Termin: 49 337 15
+Termin: 36 337 19
+Termin: 24 337 16
+Termin: 16 338 9
+Termin: 48 338 6
+Termin: 29 338 20
+Termin: 15 339 0
+Termin: 22 339 7
+Termin: 47 339 20
+Termin: 10 340 5
+Termin: 40 340 14
+Termin: 10 340 10
+Termin: 42 341 10
+Termin: 31 341 17
+Termin: 23 341 4
+Termin: 24 342 13
+Termin: 34 342 18
+Termin: 9 342 18
+Termin: 46 343 14
+Termin: 50 343 9
+Termin: 12 343 8
+Termin: 17 344 4
+Termin: 9 344 15
+Termin: 37 344 0
+Termin: 45 345 5
+Termin: 43 345 3
+Termin: 25 345 2
+Termin: 21 346 13
+Termin: 19 346 8
+Termin: 43 346 9
+Termin: 11 347 12
+Termin: 11 347 8
+Termin: 50 347 4
+Termin: 6 348 18
+Termin: 40 348 6
+Termin: 33 348 4
+Termin: 22 349 10
+Termin: 20 349 16
+Termin: 47 349 6
