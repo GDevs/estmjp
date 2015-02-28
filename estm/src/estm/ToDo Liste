@@ -1,0 +1,25 @@
+By Ben
+
+Ich hab hier mal ne ToDo Liste reingepackt. Wenn wer ne bessere Idee hat oder wir schon sowas haben sagt bescheid, 
+aber ich hatte grade das Prob das ich keine Ahnung habe was gemacht werden muss, vondaher find ich sowas sinnvoll.
+
+Hier bitte alles reinschreiben was noch gemacht werden muss, durchnummeriert und wenn man sich eine Aufgabe oder 
+Teilaufgabe ausgesucht hat einfach Namen dahinter schreiben. Zur struckturierung würde ich sagen Aufgaben nach 
+Klasse oder keine Ahnung Thema oder beides, zusammengefasst durch Nummerierung:
+
+___________________________________________________
+___________________________________________________
+1. Beispiel         TAKEN BY: non  
+   Beschreibung: Beispiel Layout für die gestaltung einer TODO Liste
+   
+   Anforderung : Verständliche zeigen wie die TODO Liste aufgebaut werden soll
+----------------------------------------------------------------------------------------------------------------
+1.1 Unterbeispiel                          TAKEN BY: Ben IN PROGRESS   
+    ......
+----------------------------------------------------------------------------------------------------------------
+1.1.1 Unter- Unterbeispiel    TAKEN BY: Ben FINISHED
+----------------------------------------------------------------------------------------------------------------
+1.1.2 Weiterer Auftrag !!!!   TAKEN BY: Ben IN PROGRESS (evtl. %-Angabe)
+______________________________________________________
+______________________________________________________
+2. Beispiel
