@@ -16,20 +16,22 @@ do forall <i> in L: forall <j> in E: print i , " ", j, " ", w[i,j];
 
 #Zuweisung
 set TxLxE := T * L  * E;
+#set TxLxE := {<i, j, k> in T * L  * E | w[j,k] != 0};
 
+do print L;
+do print TxLxE;
 #Entscheidungsvariable
 var x[TxLxE] binary ;
  
 defnumb wun(j,k) := if w[j,k] != 0 then 1 else 0 end ;
-do print wun("L1","E1");
-do print wun("L1","E2");
-do print wun("L2","E1");
+
 #Kosten
 minimize cost: sum <i,j,k> in TxLxE: ((wun(j,k) * -1) * (1/(abs(w[j,k]-i)+ 1))  *  x[i,j,k]);
 
+#subto a: forall <i> in T: forall <j> in L: sum <i,j,k> in TxLxE: x[i,j,k] <= 1;
 subto a: forall <i> in T: forall <j> in L: sum <i,j,k> in TxLxE: x[i,j,k] <= 1;
 subto b: forall <i> in T: forall <k> in E: sum <i,j,k> in TxLxE: x[i,j,k] <= 1;
-subto c: forall <e> in E: forall <l> in L: sum <t> in T: x[t,l,e] <= 1;
+subto c: forall <k> in E: forall <j> in L: sum <i,j,k> in TxLxE: x[i,j,k] <= 1;
 
 #Steinbruch
 #================================================================================================

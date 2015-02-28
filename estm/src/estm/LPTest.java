@@ -71,8 +71,6 @@ public class LPTest {
 				writer.println("Termin: " + i);
 			}
 			for (Termin i : wünsche){
-				String leID = i.getLehrer().getID().toString();
-				String eID
 				writer.println("Wunsch: " + i.getLehrer().getID() + " " + i.getElter().getID() + " " + i.getZeitschiene());
 			}
 			writer.close();

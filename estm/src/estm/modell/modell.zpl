@@ -3,14 +3,14 @@
 # Version 27.02.2015
 
 #Lehrer
-set L  := {read "test.dat" as "<2s>" match "^Lehrer:" comment "#"};
+set L  := {read "test3.dat" as "<2s>" match "^Lehrer:" comment "#"};
 #Elter
-set E := {read "test.dat" as "<2s>" match "^Elter:" comment "#"};
+set E := {read "test3.dat" as "<2s>" match "^Elter:" comment "#"};
 #Termine
-set T := {read "test.dat" as "<2n>" match "^Termin:" comment "#"};
+set T := {read "test3.dat" as "<2n>" match "^Termin:" comment "#"};
 
 #Wünsche <Termin, Lehrer, Elter>
-param w[L*E] := read "test.dat" as "<2s,3s> 4n" match "^Wunsch:" comment "#" default 0;
+param w[L*E] := read "test3.dat" as "<2s,3s> 4n" match "^Wunsch:" comment "#" default 0;
 
 do forall <i> in L: forall <j> in E: print i , " ", j, " ", w[i,j];
 
