@@ -25,18 +25,18 @@ public class LPTest {
 		int ID;
 		String status;
 		int i;
-		for (int j = 0; j <= 20; j++){
+		for (int j = 1; j <= 20; j++){
 			termine.add(j);
 		}
 		
-		for (i = 0; i < 50; i++){
+		for (i = 1; i <= 50; i++){
 			name = "Lnach" + i;
 			vorname = "Lvor" + i;
 			ID = i;
 			status = "L";
 			personen.add(new Person(name, vorname, ID, status));
 		}
-		for (i = 50; i < 350; i++){
+		for (i = 51; i <= 350; i++){
 			name = "Enach" + i;
 			vorname = "Evor" + i;
 			ID = i;
@@ -59,11 +59,13 @@ public class LPTest {
 		try {
 			PrintWriter writer = new PrintWriter("F:/source/estmjp/estm/src/estm/modell/test3.dat", "UTF-8");
 			for (Person i : personen){
-				writer.println(i.getStatus() + ": "+ i.getID());
+				
 				if(i.getStatus().equals("E")){
-					System.out.println("Elter: "+ i.getID());
+					writer.println(i.getStatus() + ": E"+ i.getID());
+					System.out.println("Elter: E"+ i.getID());
 				} else {
-					System.out.println("Lehrer: "+ i.getID());
+					writer.println(i.getStatus() + ": E"+ i.getID());
+					System.out.println("Lehrer: L"+ i.getID());
 				}
 				
 			}
@@ -71,7 +73,7 @@ public class LPTest {
 				writer.println("Termin: " + i);
 			}
 			for (Termin i : wünsche){
-				writer.println("Wunsch: " + i.getLehrer().getID() + " " + i.getElter().getID() + " " + i.getZeitschiene());
+				writer.println("Wunsch: L" + i.getLehrer().getID() + " E" + i.getElter().getID() + " " + i.getZeitschiene());
 			}
 			writer.close();
 		} catch (Exception e) {
