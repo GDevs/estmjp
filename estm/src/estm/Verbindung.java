@@ -28,14 +28,18 @@ public class Verbindung {
 		}
 		try {
 			File f = new File("settings.ini");
-			//if (!f.exists()) {
+			if (!f.exists()) {
 			    System.out.println("connect öffne connect!");
 				Connect connect = new Connect();
 				System.out.println("connect geschlossen!");
-			//}
+			}
 			try {
 				Ini datei = new Ini(new File("settings.ini"));
 				Ini.Section sektion = datei.get("datenbank");
+				datenbankAdresse = sektion.get("adresse");
+				datenbankName = sektion.get("name");
+				datenbankNutzer = sektion.get("nutzer");
+				datenbankKennwort = sektion.get("kennwort");
 			} catch (InvalidFileFormatException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
