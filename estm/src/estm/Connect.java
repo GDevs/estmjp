@@ -21,7 +21,7 @@ import java.io.IOException;
 import org.ini4j.Ini;
 import org.ini4j.InvalidFileFormatException;
 
-public class Connect extends JDialog {
+public class Connect extends JDialog implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -61,7 +61,7 @@ public class Connect extends JDialog {
 	public Connect() {
 		setTitle("Verbinde");
 		setModal(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 250, 400);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -104,44 +104,46 @@ public class Connect extends JDialog {
 		contentPane.add(lblPasswort);
 		
 		JButton btnLogin = new JButton("Login");
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				datenbankAdresse = textField.getText();
-				datenbankName = textField_1.getText();
-				datenbankNutzer = textField_2.getText();
-				datenbankKennwort = new String(passwordField.getPassword());
-				try {
-					File f = new File("settings.ini");
-					if(!f.exists()){
-						f.createNewFile();
-					}
-					Ini datei = new Ini(new File(
-						"settings.ini"));
-					Ini.Section sektion = datei.get("datenbank");
-					if(sektion == null){
-						datei.add("datenbank");
-						sektion = datei.get("datenbank");
-					}
-					sektion.put("adresse", datenbankAdresse);
-					sektion.put("name", datenbankName);
-					sektion.put("nutzer", datenbankNutzer);
-					sektion.put("kennwort", datenbankKennwort);
-					datei.store();
-					//System.out.println("DATEN GESCHRIEBEN");
-				} catch (InvalidFileFormatException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		});
+		btnLogin.addActionListener(this);
 		btnLogin.setBounds(72, 327, 89, 23);
 		contentPane.add(btnLogin);
 		
 		JCheckBox chckbxAlsStandard = new JCheckBox("Als Standard");
 		chckbxAlsStandard.setBounds(72, 282, 97, 23);
 		contentPane.add(chckbxAlsStandard);
+	}
+	
+	public void actionPerformed(ActionEvent arg0) {
+		datenbankAdresse = textField.getText();
+		datenbankName = textField_1.getText();
+		datenbankNutzer = textField_2.getText();
+		datenbankKennwort = new String(passwordField.getPassword());
+		try {
+			File f = new File("settings.ini");
+			if(!f.exists()){
+				f.createNewFile();
+			}
+			Ini datei = new Ini(new File(
+				"settings.ini"));
+			Ini.Section sektion = datei.get("datenbank");
+			if(sektion == null){
+				datei.add("datenbank");
+				sektion = datei.get("datenbank");
+			}
+			sektion.put("adresse", datenbankAdresse);
+			sektion.put("name", datenbankName);
+			sektion.put("nutzer", datenbankNutzer);
+			sektion.put("kennwort", datenbankKennwort);
+			datei.store();
+			//System.out.println("DATEN GESCHRIEBEN");
+		} catch (InvalidFileFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    setVisible(false);
+	    windowClose();
 	}
 }

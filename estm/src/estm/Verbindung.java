@@ -28,10 +28,10 @@ public class Verbindung {
 		}
 		try {
 			File f = new File("settings.ini");
-			if (!f.exists()) {
+			//if (!f.exists()) {
 				Connect connect = new Connect();
 				System.out.println("connect geschlossen!");
-			}
+			//}
 			try {
 				Ini datei = new Ini(new File("settings.ini"));
 				Ini.Section sektion = datei.get("datenbank");
