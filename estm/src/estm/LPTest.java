@@ -11,9 +11,9 @@ public class LPTest {
 	private static List<Person> personen;
 	private static List<Termin> wünsche;
 	private static List<Integer> termine; 
-	private static int tz = 20;
-	private static int lz = 30;
-	private static int ez = 300;
+	private static int tz = 50;
+	private static int lz = 60;
+	private static int ez = 900;
 	private static int wnpe = 2;
 	
 	public LPTest() {
