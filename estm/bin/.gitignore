@@ -1,4 +1,7 @@
 /.classpath
 /settings.ini
 /estm/
+/doc/
 /.gitignore
+/.project
+/.settings/
