@@ -11,6 +11,10 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import org.ini4j.Ini;
 
 public class Connect extends JFrame {
 
@@ -22,7 +26,10 @@ public class Connect extends JFrame {
 	private JLabel lblDatenbankname;
 	private JLabel lblBenutzer;
 	private JLabel lblPasswort;
-	
+	public String datenbankAdresse;
+	public String datenbankName;
+	public String datenbankNutzer;
+	public String datenbankKennwort;
 	
 /**________________________________________________________________________________________________________________
  * ________________________________________________________________________________________________________________*/
@@ -68,7 +75,7 @@ public class Connect extends JFrame {
 		textField_1.setColumns(10);
 		textField_1.setBounds(39, 116, 156, 24);
 		contentPane.add(textField_1);
-		
+	
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		textField_2.setBounds(39, 186, 156, 24);
@@ -91,6 +98,14 @@ public class Connect extends JFrame {
 		contentPane.add(lblPasswort);
 		
 		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				datenbankAdresse = textField.getText();
+				datenbankName = textField_1.getText();
+				datenbankNutzer = textField_2.getText();
+				datenbankKennwort = new String(passwordField.getPassword());
+			}
+		});
 		btnLogin.setBounds(72, 327, 89, 23);
 		contentPane.add(btnLogin);
 		
