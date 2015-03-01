@@ -274,7 +274,10 @@ public class ESTM {
 		}
 	}
 	
-	
+	/**
+	 * Liest Benutzer aus einer csv Datei ein
+	 * @param path Pfad zur csv Datei
+	 */
 	public void addUsrFromFile(String path){
 		try {
 			List<String> personen = new ArrayList<String>(); 
@@ -289,13 +292,8 @@ public class ESTM {
 			
 			for (String person : personen){
 				String t[];
-				//System.out.println(termin);
-				t = person.split(";");
-				//System.out.println(" Termin: " + t[1] + " Lehrer: " +  t[2] + " Elter: " + t[3]);
+				t = person.split(";| ");
 				if(!t[0].equals("#")){
-					//String q = "INSERT INTO personen(`ID`, `name`, vorname, rechte, `status`, kennwort) "
-						//	+ "VALUES(`" + t[0] + "`,`" + t[1] + "`,`" + t[2] + "`,`" + t[3] + "`,`" + 
-							//t[4] + "`,`" + t[5] +"`);";
 					String q = "INSERT INTO personen(`ID`, `name`, vorname, rechte, `status`, kennwort) "
 							+ "VALUES(" + t[0] + ",\"" + t[1] + "\",\"" + t[2] + "\"," + t[3] + ",\"" + 
 							t[4] + "\",\"" + t[5] +"\");";
