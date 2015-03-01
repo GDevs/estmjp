@@ -52,7 +52,7 @@ public class Connect extends JFrame {
  * ________________________________________________________________________________________________________________*/
 	/**
 	 * Create the frame.
-	 */
+	 */asd
 	public Connect() {
 		setTitle("Verbinde");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
