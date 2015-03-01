@@ -18,17 +18,23 @@ set TxLxE := T * {<j,k> in L * E | w[j,k] > 0};
 
 #Entscheidungsvariable
 var x[TxLxE] binary ;
-var y[E] real ;
-var z[E] real ;
- 
+var y[E] real ; # Wunscherfüllungsgrad 
+var z;
+
 defnumb wun(j,k) := if w[j,k] != 0 then 1 else 0 end ;
+#defnumb grad(j,k):= (wun(j,k) * -1) * (1/(abs(w[j,k]-i)+ 1));
+defnumb grad(j,k):= (wun(j,k) * 1) * (1/(abs(w[j,k]-i)+ 1));
 
 #Kosten
-minimize cost: sum <i,j,k> in TxLxE: ((wun(j,k) * -1) * (1/(abs(w[j,k]-i)+ 1))  *  x[i,j,k]);
+#minimize cost: sum <i,j,k> in TxLxE: ((wun(j,k) * -1) * (1/(abs(w[j,k]-i)+ 1))  *  x[i,j,k]);
+#maximize cost: sum <i,j,k> in TxLxE: grad(j,k)  *  x[i,j,k];
+maximize cost: z;
 
-subto a: forall <i> in T: forall <j> in L: sum <i,j,k> in TxLxE: x[i,j,k] <= 1;
-subto b: forall <i> in T: forall <k> in E: sum <i,j,k> in TxLxE: x[i,j,k] <= 1;
-subto c: forall <k> in E: forall <j> in L: sum <i,j,k> in TxLxE: x[i,j,k] <= 1;
+subto a: forall <i> in T: forall <j> in L: sum <i,j,k> in TxLxE:              x[i,j,k] <= 1;
+subto b: forall <i> in T: forall <k> in E: sum <i,j,k> in TxLxE:              x[i,j,k] <= 1;
+subto c: forall <k> in E: forall <j> in L: sum <i,j,k> in TxLxE:	      x[i,j,k] <= 1;
+subto d: forall <k> in E: 	     	   sum <i,j,k> in TxLxE:  grad(j,k) * x[i,j,k] >= y[k];
+subto e: forall <k> in E: 		       	       	  	 	     	  y[k] >= z;
 
 #Steinbruch
 #================================================================================================

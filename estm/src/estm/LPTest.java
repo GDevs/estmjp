@@ -13,9 +13,9 @@ public class LPTest {
 	private static List<Person> personen;
 	private static List<Termin> wünsche;
 	private static List<Integer> termine; 
-	private static int tz = 50;
-	private static int lz = 60;
-	private static int ez = 900;
+	private static int tz = 30;
+	private static int lz = 30;
+	private static int ez = 500;
 	private static int wnpe = 2;
 	
 	public LPTest() {
@@ -76,10 +76,10 @@ public class LPTest {
 			for (Person i : personen){
 				
 				if(i.getStatus().equals("E")){
-					writer.println("Elter: E"+ i.getID());
+					writer.println("Elter: "+ i.getID());
 					System.out.println("Elter: Elter"+ i.getID());
 				} else {
-					writer.println("Lehrer: L"+ i.getID());
+					writer.println("Lehrer: "+ i.getID());
 					System.out.println("Lehrer: "+ i.getID());
 				}
 				
