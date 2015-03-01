@@ -11,10 +11,14 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.IOException;
 
 import org.ini4j.Ini;
+import org.ini4j.InvalidFileFormatException;
 
 public class Connect extends JFrame {
 
@@ -104,6 +108,31 @@ public class Connect extends JFrame {
 				datenbankName = textField_1.getText();
 				datenbankNutzer = textField_2.getText();
 				datenbankKennwort = new String(passwordField.getPassword());
+				try {
+					File f = new File("settings.ini");
+					if(!f.exists()){
+						f.createNewFile();
+					}
+					Ini datei = new Ini(new File(
+						"settings.ini"));
+					Ini.Section sektion = datei.get("datenbank");
+					if(sektion == null){
+						datei.add("datenbank");
+						sektion = datei.get("datenbank");
+					}
+					sektion.put("adresse", datenbankAdresse);
+					sektion.put("name", datenbankName);
+					sektion.put("nutzer", datenbankNutzer);
+					sektion.put("kennwort", datenbankKennwort);
+					datei.store();
+					//System.out.println("DATEN GESCHRIEBEN");
+				} catch (InvalidFileFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		btnLogin.setBounds(72, 327, 89, 23);
