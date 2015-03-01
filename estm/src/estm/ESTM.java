@@ -246,16 +246,18 @@ public class ESTM {
 	/**
 	 * @param pPerson
 	 */
-	public void insertPersonIntoDatabase(Person pPerson){
+	public boolean insertPersonIntoDatabase(Person person){
 		try{
 		Statement stmt = conn.createStatement();
-		String request = "INSERT INTO person(Name, Vorname, Rechte, Status, Kennwort, ID) "
-				         + "VALUES("+pPerson.getName()+","+pPerson.getVorname()+","+pPerson.getRechte()+","
-				                    +pPerson.getStatus()+","+pPerson.getPassword()+","+pPerson.getID()+");";
+		String request = "INSERT INTO personen(`ID`, `name`, vorname, rechte, `status`, kennwort) "
+							+ "VALUES(" + t[0] + ",\"" + t[1] + "\",\"" + t[2] + "\"," + t[3] + ",\"" + 
+							t[4] + "\",\"" + t[5] +"\");";
 		stmt.execute(request);
+		return true;
 		}
 		catch(Exception e){
-			e.printStackTrace();
+			e.printStackTrace(); // boolean fürs error handling usw.
+			return false;
 		}
 	}
 	
@@ -294,6 +296,8 @@ public class ESTM {
 				String t[];
 				t = person.split(";| ");
 				if(!t[0].equals("#")){
+					Person p = new Person(Integer.parseInt(t[0]), t[1], t[2], Integer.parseInt(t[3]), t[4], t[5]);
+					insertPersonIntoDatabase(p);
 					String q = "INSERT INTO personen(`ID`, `name`, vorname, rechte, `status`, kennwort) "
 							+ "VALUES(" + t[0] + ",\"" + t[1] + "\",\"" + t[2] + "\"," + t[3] + ",\"" + 
 							t[4] + "\",\"" + t[5] +"\");";

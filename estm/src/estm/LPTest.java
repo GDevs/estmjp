@@ -73,10 +73,10 @@ public class LPTest {
 			for (Person i : personen){
 				
 				if(i.getStatus().equals("E")){
-					writer.println("Elter: "+ i.getID());
+					writer.println("Elter: E"+ i.getID());
 					System.out.println("Elter: Elter"+ i.getID());
 				} else {
-					writer.println("Lehrer: "+ i.getID());
+					writer.println("Lehrer: L"+ i.getID());
 					System.out.println("Lehrer: "+ i.getID());
 				}
 				

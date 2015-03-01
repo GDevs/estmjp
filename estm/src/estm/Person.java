@@ -11,13 +11,16 @@ public class Person {
 	private String status;
 	
 	private String password; // Das Passwort muss bei einer neuen Person die alle Attribute wie in der Datenbank hat auch vorhanden sein -Ben
-            String rechte;   // Fehlten auchnoch	
-	
-	public Person(String name, String vorname, int ID, String status){
+    private int rechte;      // Fehlten auchnoch	
+							 // Georg: Das passwort darf hier NUR in der gehashten form vorliegen
+    
+	public Person(int ID, String name, String vorname, int rechte, String status ,String passwort){
+		this.ID = ID;
 		this.name = name;
 		this.vorname = vorname;
-		this.ID = ID;
 		this.status = status;
+		this.rechte = rechte;
+		this.password = passwort;
 		termine = new ArrayList<Termin>();
 	}
 	
@@ -37,6 +40,6 @@ public class Person {
 	
 	public String getPassword(){return password;}
 	
-	public String getRechte(){return rechte;}
+	public int getRechte(){return rechte;}
 	
 }
