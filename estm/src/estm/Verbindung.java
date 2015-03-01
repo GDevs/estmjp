@@ -29,6 +29,7 @@ public class Verbindung {
 		try {
 			File f = new File("settings.ini");
 			//if (!f.exists()) {
+			    System.out.println("connect öffne connect!");
 				Connect connect = new Connect();
 				System.out.println("connect geschlossen!");
 			//}

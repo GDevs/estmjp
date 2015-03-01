@@ -144,6 +144,6 @@ public class Connect extends JDialog implements ActionListener {
 			e.printStackTrace();
 		}
 	    setVisible(false);
-	    windowClose();
+	    dispose();
 	}
 }
