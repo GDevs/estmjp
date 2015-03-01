@@ -10,9 +10,9 @@ public class Person {
 	private List<Termin> termine;
 	private String status;
 	
-	private String password; // Das Passwort muss bei einer neuen Person die alle Attribute wie in der Datenbank hat auch vorhanden sein -Ben
-    private int rechte;      // Fehlten auchnoch	
-							 // Georg: Das passwort darf hier NUR in der gehashten form vorliegen
+	private String password; 
+    private int rechte;      
+    
     
 	public Person(int ID, String name, String vorname, int rechte, String status ,String passwort){
 		this.ID = ID;
