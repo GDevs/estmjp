@@ -51,8 +51,8 @@ public class Connect extends JFrame {
 /**________________________________________________________________________________________________________________
  * ________________________________________________________________________________________________________________*/
 	/**
-	 * Create the frame.
-	 */asd
+	 * Create the frame. LOL
+	 */
 	public Connect() {
 		setTitle("Verbinde");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
