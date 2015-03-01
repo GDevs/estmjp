@@ -111,6 +111,8 @@ public class Login extends JFrame implements ActionListener {
 			System.out.println("ERFOLG!");
 			
 			this.setVisible(false);
+			
+			
 			ESTM estm = new ESTM(verbindung.conn, person); 	//ESTM WIRD ERZEUGT
 			
 			//HIER FEHLT NOCH CODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
