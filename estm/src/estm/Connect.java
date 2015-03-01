@@ -31,6 +31,7 @@ public class Connect extends JDialog implements ActionListener {
 	private JLabel lblDatenbankname;
 	private JLabel lblBenutzer;
 	private JLabel lblPasswort;
+	private JButton btnLogin;
 	public String datenbankAdresse;
 	public String datenbankName;
 	public String datenbankNutzer;
@@ -103,7 +104,7 @@ public class Connect extends JDialog implements ActionListener {
 		lblPasswort.setBounds(39, 221, 156, 24);
 		contentPane.add(lblPasswort);
 		
-		JButton btnLogin = new JButton("Login");
+		btnLogin = new JButton("Login");
 		btnLogin.addActionListener(this);
 		btnLogin.setBounds(72, 327, 89, 23);
 		contentPane.add(btnLogin);
@@ -111,9 +112,12 @@ public class Connect extends JDialog implements ActionListener {
 		JCheckBox chckbxAlsStandard = new JCheckBox("Als Standard");
 		chckbxAlsStandard.setBounds(72, 282, 97, 23);
 		contentPane.add(chckbxAlsStandard);
+
+		setVisible(true);
 	}
 	
 	public void actionPerformed(ActionEvent arg0) {
+		if(arg0.getSource().equals(btnLogin)){
 		datenbankAdresse = textField.getText();
 		datenbankName = textField_1.getText();
 		datenbankNutzer = textField_2.getText();
@@ -145,5 +149,6 @@ public class Connect extends JDialog implements ActionListener {
 		}
 	    setVisible(false);
 	    dispose();
+		}
 	}
 }
