@@ -7,6 +7,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -125,9 +127,9 @@ public class ESTM {
 			if (rsmd.getTableName(0).equals("personen")) {
 				eltern.clear();
 				lehrer.clear();
-				Person person = new Person(rs.getString("name"),
-						rs.getString("vorname"), rs.getInt("ID"),
-						rs.getString("status"));
+				Person person = new Person(rs.getInt("ID"), rs.getString("name"),
+						rs.getString("vorname"), rs.getInt("rechte"),
+						rs.getString("status"), rs.getString("kennwort"));
 				if (person.getStatus().equals("L")) {
 					lehrer.add(person);
 				} else if (person.getStatus().equals("E")) {
@@ -251,9 +253,10 @@ public class ESTM {
 		try{
 		Statement stmt = conn.createStatement();
 		String request = "INSERT INTO personen(`ID`, `name`, vorname, rechte, `status`, kennwort) "
-							+ "VALUES(" + t[0] + ",\"" + t[1] + "\",\"" + t[2] + "\"," + t[3] + ",\"" + 
-							t[4] + "\",\"" + t[5] +"\");";
+							+ "VALUES(" + person.getID() + ",\"" + person.getName() + "\",\"" + person.getVorname() + "\"," + person.getRechte() + ",\"" + 
+							person.getStatus() + "\",\"" + person.getPassword() +"\");";
 		stmt.execute(request);
+		System.out.println(request);
 		return true;
 		}
 		catch(Exception e){
@@ -291,7 +294,7 @@ public class ESTM {
 			while ((sCurrentLine = br.readLine()) != null) {
 				personen.add(sCurrentLine);
 			}
-			Statement stmt = conn.createStatement();
+			//Statement stmt = conn.createStatement();
 			
 			for (String person : personen){
 				String t[];
@@ -299,12 +302,12 @@ public class ESTM {
 				if(!t[0].equals("#")){
 					Person p = new Person(Integer.parseInt(t[0]), t[1], t[2], Integer.parseInt(t[3]), t[4], t[5]);
 					insertPersonIntoDatabase(p);
-					String q = "INSERT INTO personen(`ID`, `name`, vorname, rechte, `status`, kennwort) "
-							+ "VALUES(" + t[0] + ",\"" + t[1] + "\",\"" + t[2] + "\"," + t[3] + ",\"" + 
-							t[4] + "\",\"" + t[5] +"\");";
-					System.out.println(q);
-					System.out.println("sql query erfolgreich");		
-					stmt.execute(q);
+					//String q = "INSERT INTO personen(`ID`, `name`, vorname, rechte, `status`, kennwort) "
+						//	+ "VALUES(" + t[0] + ",\"" + t[1] + "\",\"" + t[2] + "\"," + t[3] + ",\"" + 
+							//t[4] + "\",\"" + t[5] +"\");";
+					//System.out.println(q);
+					//System.out.println("sql query erfolgreich");		
+					//stmt.execute(q);
 				}
 			}
 			br.close();
@@ -316,7 +319,7 @@ public class ESTM {
 		}
 	}
 	
-	private static void writeUsrsToDat(){
+	/*private static void writeUsrsToDat(){
 		try {
 			PrintWriter writer = new PrintWriter("F:/source/estmjp/estm/src/estm/usrs.csv", "ASCII");
 			for (Person i : personen){
@@ -327,4 +330,5 @@ public class ESTM {
 			e.printStackTrace();
 		}		
 		System.out.println("DONE");
+	}*/
 }

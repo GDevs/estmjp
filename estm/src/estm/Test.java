@@ -38,12 +38,12 @@ public class Test {
         } catch (SQLException ex) {
             System.out.println("Fehler beim Aufbau der Verbindung!");
         }
-		Person p = new Person("Peter", "Enis", 01, "SUPAADMIN");
+		Person p = new Person(0, "Peter", "Enis", 1, "L", "default");
 		ESTM estm = new ESTM(conn, p);
 
 		//estm.initialize();
 		estm.parseLpSol(2);
-		estm.addUsrFromFile("F:/source/estmjp/estm/src/estm/usrs.dat");
+		estm.addUsrFromFile("F:/source/estmjp/estm/src/estm/data/usrs.csv");
 	}
 
 }

@@ -3,6 +3,8 @@ package estm;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -40,14 +42,15 @@ public class LPTest {
 			vorname = "Lvor" + i;
 			ID = i;
 			status = "L";
-			personen.add(new Person( ID, name, vorname, 1,status,"default"));
+			personen.add(new Person( ID, name, vorname, 1,status,Hash.hash("default")));
+			System.out.println(Hash.hash("default"));
 		}
 		for (i = lz + 1; i <= ez+lz; i++){
 			name = "Enach" + i;
 			vorname = "Evor" + i;
 			ID = i;
 			status = "E";
-			personen.add(new Person(ID, name, vorname, 0, status, "default"));
+			personen.add(new Person(ID, name, vorname, 0, status, Hash.hash("default")));
 		}
 
 		for (Person j : personen){
@@ -106,7 +109,7 @@ public class LPTest {
 	
 	private static void writeUsrsToDat(){
 		try {
-			PrintWriter writer = new PrintWriter("F:/source/estmjp/estm/src/estm/usrs.csv", "ASCII");
+			PrintWriter writer = new PrintWriter("F:/source/estmjp/estm/src/estm/data/usrs.csv", "ASCII");
 			for (Person i : personen){
 				writer.println(i.getID() + ";" + i.getName() + ";" + i.getVorname() + ";" + i.getRechte() + ";" + i.getStatus() + ";" + i.getPassword());
 			}
@@ -116,5 +119,6 @@ public class LPTest {
 		}		
 		System.out.println("DONE");
 	}
+
 
 }
