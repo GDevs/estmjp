@@ -1,3 +1,8 @@
 /.classpath
 /settings.ini
+<<<<<<< HEAD
 /estm
+=======
+/estm/
+/.gitignore
+>>>>>>> branch 'master' of https://github.com/estmDevs/estmjp.git
