@@ -1,0 +1,6 @@
+solution status: optimal solution found
+objective value:                                 -3.5
+x#1$2$4                                             1 	(obj:-1)
+x#2$1$6                                             1 	(obj:-1)
+x#2$2$5                                             1 	(obj:-0.5)
+x#2$3$7                                             1 	(obj:-1)
