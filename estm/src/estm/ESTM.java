@@ -73,7 +73,6 @@ public class ESTM {
 				stmt.execute(q);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -97,6 +96,7 @@ public class ESTM {
 				return true;
 			}
 		} catch (SQLException ex) {
+			return false;
 			// System.out.println("Fehler beim Statement!");
 		}
 		return false;
@@ -198,7 +198,6 @@ public class ESTM {
 				wuensche.add(termin);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
@@ -240,7 +239,6 @@ public class ESTM {
 			
 			br.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
