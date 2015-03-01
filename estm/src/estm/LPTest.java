@@ -59,6 +59,7 @@ public class LPTest {
 		}
 		
 		writeToDat();
+		writeUsrsToDat();
 	}
 
 	private static int getRandomTermin() {
@@ -105,16 +106,10 @@ public class LPTest {
 	
 	private static void writeUsrsToDat(){
 		try {
-			PrintWriter writer = new PrintWriter("F:/source/estmjp/estm/src/estm/usrs.dat", "ASCII");
+			PrintWriter writer = new PrintWriter("F:/source/estmjp/estm/src/estm/usrs.csv", "ASCII");
 			for (Person i : personen){
-				if(i.getStatus().equals("E")){
-					writer.println(i.getID() + ";" + i.getName() + ";" + i.getVorname() + ";" + 0 + ";" + i.getStatus() + ";" + "default");
-					System.out.println("Elter: Elter"+ i.getID());
-				} else {
-					writer.println("Lehrer: "+ i.getID());
-					System.out.println("Lehrer: "+ i.getID());
-				}
-				
+				writer.println(i.getID() + ";" + i.getName() + ";" + i.getVorname() + ";" + 0 + ";" + i.getStatus() + ";" + "default");
+				System.out.println("Elter: Elter"+ i.getID());
 			}
 			writer.close();
 		} catch (Exception e) {

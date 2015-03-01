@@ -279,8 +279,7 @@ public class ESTM {
 		try {
 			List<String> personen = new ArrayList<String>(); 
 			BufferedReader br;
-			br = new BufferedReader(new FileReader(
-					"F:/source/estmjp/estm/src/estm/modell/solution.dat"));
+			br = new BufferedReader(new FileReader(path));
 			
 			String sCurrentLine;
 			while ((sCurrentLine = br.readLine()) != null) {
@@ -294,9 +293,12 @@ public class ESTM {
 				t = person.split(";");
 				//System.out.println(" Termin: " + t[1] + " Lehrer: " +  t[2] + " Elter: " + t[3]);
 				if(!t[0].equals("#")){
-					String q = "INSERT INTO personen(ID, name, vorname, rechte, status, kennwort) "
-							+ "VALUES(" + t[0] + "," + t[1] + "," + t[2] + "," + t[3] + "," + 
-							t[4] + "," + t[5] +");";
+					//String q = "INSERT INTO personen(`ID`, `name`, vorname, rechte, `status`, kennwort) "
+						//	+ "VALUES(`" + t[0] + "`,`" + t[1] + "`,`" + t[2] + "`,`" + t[3] + "`,`" + 
+							//t[4] + "`,`" + t[5] +"`);";
+					String q = "INSERT INTO personen(`ID`, `name`, vorname, rechte, `status`, kennwort) "
+							+ "VALUES(" + t[0] + ",\"" + t[1] + "\",\"" + t[2] + "\"," + t[3] + ",\"" + 
+							t[4] + "\",\"" + t[5] +"\");";
 					System.out.println(q);
 					System.out.println("sql query erfolgreich");		
 					stmt.execute(q);

@@ -43,6 +43,7 @@ public class Test {
 
 		//estm.initialize();
 		estm.parseLpSol(2);
+		estm.addUsrFromFile("F:/source/estmjp/estm/src/estm/usrs.dat");
 	}
 
 }
