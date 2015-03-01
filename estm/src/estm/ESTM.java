@@ -19,7 +19,7 @@ import java.util.List;
  * 
  */
 public class ESTM {
-	private Verbindung verbindung;
+	//private Verbindung verbindung;
 	private Connection conn;
 
 	private List<Person> eltern;
@@ -32,7 +32,7 @@ public class ESTM {
 	 * 
 	 */
 	public ESTM(Connection connection, Person user) {
-		this.verbindung = verbindung;
+		//this.verbindung = verbindung;
 		this.user = user;
 		this.conn = connection;
 	}
@@ -242,6 +242,38 @@ public class ESTM {
 		}
 
 	}
+	
+	/**
+	 * @param pPerson
+	 */
+	public void insertPersonIntoDatabase(Person pPerson){
+		try{
+		Statement stmt = conn.createStatement();
+		String request = "INSERT INTO person(Name, Vorname, Rechte, Status, Kennwort, ID) "
+				         + "VALUES("+pPerson.getName()+","+pPerson.getVorname()+","+pPerson.getRechte()+","
+				                    +pPerson.getStatus()+","+pPerson.getPassword()+","+pPerson.getID()+");";
+		stmt.execute(request);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * @param pTermin
+	 */
+	public void insertTerminwunschIntoDatabase(Termin pTermin){
+		try{
+		Statement stmt = conn.createStatement();
+		String request = "INSERT INTO terminwunsch(Person1, Person2, Zeitschiene) "
+				         + "VALUES("+pTermin.getLehrer()+","+pTermin.getElter()+","+pTermin.getZeitschiene()+ ");";
+		stmt.execute(request);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
 	
 	public void addUsrFromFile(String path){
 		try {

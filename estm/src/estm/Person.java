@@ -10,6 +10,9 @@ public class Person {
 	private List<Termin> termine;
 	private String status;
 	
+	private String password; // Das Passwort muss bei einer neuen Person die alle Attribute wie in der Datenbank hat auch vorhanden sein -Ben
+            String rechte;   // Fehlten auchnoch	
+	
 	public Person(String name, String vorname, int ID, String status){
 		this.name = name;
 		this.vorname = vorname;
@@ -31,4 +34,9 @@ public class Person {
 	}
 	
 	public String getStatus(){return status;}
+	
+	public String getPassword(){return password;}
+	
+	public String getRechte(){return rechte;}
+	
 }
