@@ -1,14 +1,23 @@
 package estm;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.ini4j.Ini;
+import org.ini4j.InvalidFileFormatException;
+
 public class Verbindung {
 	java.sql.Connection conn;
 	private Statement stmt;
 	private ResultSet rs;
+	private String datenbankAdresse;
+	private String datenbankName;
+	private String datenbankNutzer;
+	private String datenbankKennwort;
 
 	public Verbindung() {
 		try {
@@ -18,8 +27,24 @@ public class Verbindung {
 			System.out.println(ex);
 		}
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/estm",
-					"root", "toor");
+			File f = new File("settings.ini");
+			if (!f.exists()) {
+				Connect connect = new Connect();
+				System.out.println("connect geschlossen!");
+			}
+			try {
+				Ini datei = new Ini(new File("settings.ini"));
+				Ini.Section sektion = datei.get("datenbank");
+			} catch (InvalidFileFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			conn = DriverManager.getConnection("jdbc:mysql://"
+					+ datenbankAdresse + "/" + datenbankName, datenbankNutzer,
+					datenbankKennwort);
 		} catch (SQLException ex) {
 			System.out.println("Fehler beim Aufbau der Verbindung!" + ex);
 		}

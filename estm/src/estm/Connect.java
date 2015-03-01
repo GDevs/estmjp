@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -20,7 +21,7 @@ import java.io.IOException;
 import org.ini4j.Ini;
 import org.ini4j.InvalidFileFormatException;
 
-public class Connect extends JFrame {
+public class Connect extends JDialog {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -59,6 +60,7 @@ public class Connect extends JFrame {
 	 */
 	public Connect() {
 		setTitle("Verbinde");
+		setModal(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 250, 400);
 		contentPane = new JPanel();
