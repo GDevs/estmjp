@@ -40,14 +40,14 @@ public class LPTest {
 			vorname = "Lvor" + i;
 			ID = i;
 			status = "L";
-			personen.add(new Person(name, vorname, ID, status));
+			personen.add(new Person( ID, name, vorname, 1,status,"default"));
 		}
 		for (i = lz + 1; i <= ez+lz; i++){
 			name = "Enach" + i;
 			vorname = "Evor" + i;
 			ID = i;
 			status = "E";
-			personen.add(new Person(name, vorname, ID, status));
+			personen.add(new Person(ID, name, vorname, 0, status, "default"));
 		}
 
 		for (Person j : personen){
@@ -108,16 +108,12 @@ public class LPTest {
 		try {
 			PrintWriter writer = new PrintWriter("F:/source/estmjp/estm/src/estm/usrs.csv", "ASCII");
 			for (Person i : personen){
-				writer.println(i.getID() + ";" + i.getName() + ";" + i.getVorname() + ";" + 0 + ";" + i.getStatus() + ";" + "default");
-				System.out.println("Elter: Elter"+ i.getID());
+				writer.println(i.getID() + ";" + i.getName() + ";" + i.getVorname() + ";" + i.getRechte() + ";" + i.getStatus() + ";" + i.getPassword());
 			}
 			writer.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		//writer.println("The first line");
-		
+		}		
 		System.out.println("DONE");
 	}
 

@@ -6,6 +6,7 @@ package estm;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -280,7 +281,7 @@ public class ESTM {
 	 * Liest Benutzer aus einer csv Datei ein
 	 * @param path Pfad zur csv Datei
 	 */
-	public void addUsrFromFile(String path){
+	public boolean addUsrFromFile(String path){
 		try {
 			List<String> personen = new ArrayList<String>(); 
 			BufferedReader br;
@@ -306,12 +307,24 @@ public class ESTM {
 					stmt.execute(q);
 				}
 			}
-			
 			br.close();
+			return true;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+			return false;
 		}
-
 	}
+	
+	private static void writeUsrsToDat(){
+		try {
+			PrintWriter writer = new PrintWriter("F:/source/estmjp/estm/src/estm/usrs.csv", "ASCII");
+			for (Person i : personen){
+				writer.println(i.getID() + ";" + i.getName() + ";" + i.getVorname() + ";" + i.getRechte() + ";" + i.getStatus() + ";" + i.getPassword());
+			}
+			writer.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		System.out.println("DONE");
 }
