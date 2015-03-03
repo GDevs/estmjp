@@ -52,7 +52,7 @@ public class Verbindung {
 	}
 
 	public ResultSet query(String pSelect) {
-		ResultSet rs = null;
+		rs = null;
 		// System.out.println("SQL Befehl:"+pSelect);
 		try {
 			stmt = conn.createStatement();
