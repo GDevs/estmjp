@@ -33,11 +33,11 @@ public class Test {
             System.out.println("Fehler beim Aufbau der Verbindung!");
         }
 		Person p = new Person(0, "Peter", "Enis", 1, "L", "default");
-		ESTM estm = new ESTM(conn, p);
+		ESTM estm = new ESTM(new Verbindung(), p);
 
 		//estm.initialize();
 		estm.parseLpSol(2);
-		estm.addUsrFromFile("F:/source/estmjp/estm/src/estm/data/usrs.csv");
+		estm.addUsrFromFile("src/estm/data/usrs.csv");
 	}
 
 }

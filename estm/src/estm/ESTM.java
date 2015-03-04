@@ -25,7 +25,7 @@ public class ESTM {
 	private Verbindung verbindung;
 
 	private List<Person> personen;
-	private List<Termin> wuensche;
+	//private List<Termin> wuensche;
 
 	private Person user;
 
@@ -39,10 +39,10 @@ public class ESTM {
 
 		ResultSet rs = verbindung.query("SELECT * FROM personen");
 		mapping(rs);
-		verbindung.closeStatement();
-		rs = verbindung.query("SELECT * FROM terminwuensche");
-		mapping(rs);
-		verbindung.closeStatement();
+		verbindung.closeStatement();/*
+		rs = verbindung.query("SELECT * FROM terminwunsch");
+    	mapping(rs);
+		verbindung.closeStatement();*/
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class ESTM {
 		ResultSetMetaData rsmd;
 		try {
 			rsmd = rs.getMetaData();
-			if (rsmd.getTableName(0).equals("personen")) {
+			if (rsmd.getTableName(1).equals("personen")) {
 				personen.clear();
 				if (rs.first()) {
 					do {
@@ -150,7 +150,7 @@ public class ESTM {
 						// abgebrochen
 					Termin termin = new Termin(rs.getInt("zeitpunkt"), pElter,
 							pLehrer);
-					wuensche.add(termin);
+					//wuensche.add(termin);
 				}
 				while (rs.next())
 					;
@@ -169,12 +169,12 @@ public class ESTM {
 	public void parseLpSol(int version) {
 		try {
 			verbindung.query("DELETE FROM `termine` WHERE `version`=" + version);
-			verbindung.closeStatement();
+			//verbindung.closeStatement();
 
 			List<String> termine = new ArrayList<String>();
 			BufferedReader br;
 			br = new BufferedReader(new FileReader(
-					"F:/source/estmjp/estm/src/estm/modell/solution.dat"));
+					"src/estm/modell/solution.dat"));
 
 			String sCurrentLine;
 			while ((sCurrentLine = br.readLine()) != null) {
@@ -201,7 +201,7 @@ public class ESTM {
 					System.out.println("sql query erfolgreich");
 					// Statement stmt = conn.createStatement();
 					verbindung.query(q);
-					verbindung.closeStatement();
+					//verbindung.closeStatement();
 				}
 			}
 
@@ -230,7 +230,7 @@ public class ESTM {
 					+ person.getStatus()
 					+ "\",\""
 					+ person.getPassword() + "\");");
-			verbindung.closeStatement();
+			//verbindung.closeStatement();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace(); // boolean fürs error handling usw.
@@ -251,7 +251,7 @@ public class ESTM {
 					+ ","
 					+ pTermin.getZeitschiene()
 					+ ");");
-			verbindung.closeStatement();
+			//verbindung.closeStatement();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
