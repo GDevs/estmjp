@@ -22,8 +22,7 @@ import java.util.List;
  * 
  */
 public class ESTM {
-	// private Verbindung verbindung;
-	private Connection conn;
+	private Verbindung verbindung;
 
 	private List<Person> personen;
 	private List<Termin> wuensche;
@@ -33,11 +32,17 @@ public class ESTM {
 	/**
 	 * 
 	 */
-	public ESTM(Connection connection, Person user) {
-		// this.verbindung = verbindung;
+	public ESTM(Verbindung verbindung, Person user) {
+		this.verbindung = verbindung;
 		this.user = user;
-		this.conn = connection;
 		personen = new ArrayList<Person>();
+
+		ResultSet rs = verbindung.query("SELECT * FROM personen");
+		mapping(rs);
+		verbindung.closeStatement();
+		rs = verbindung.query("SELECT * FROM terminwuensche");
+		mapping(rs);
+		verbindung.closeStatement();
 	}
 
 	/**
@@ -66,53 +71,13 @@ public class ESTM {
 				ex.printStackTrace();
 			}
 		}
-		ResultSet rs;
-		try {
 			for (String q : createDtb) {
-				Statement stmt = conn.createStatement();
-				stmt.execute(q);
+				verbindung.query(q);
+				verbindung.closeStatement();
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 	}
 
-	/**
-	 * 
-	 * @param SQL
-	 *            query
-	 * @return boolean query erfolgreich
-	 */
-	public boolean query(String query) {
-		ResultSet rs = null;
-		// System.out.println("SQL Befehl:"+pSelect);
-		try {
-			Statement stmt = conn.createStatement();
-			stmt.execute(query);
-			rs = stmt.getResultSet();
-			if (process(rs)) {
-				rs.close();
-				stmt.close();
-				return true;
-			}
-		} catch (SQLException ex) {
-			return false;
-			// System.out.println("Fehler beim Statement!");
-		}
-		return false;
-	}
 
-	/**
-	 * 
-	 * @param rs
-	 *            Querry ergebniss
-	 * @return boolean process erfolgreich
-	 */
-	private boolean process(ResultSet rs) {
-		// wenn daten zum parsen sind dann parse(rs)
-		// wenn daten kennwortAbfrage o.ä. dann weiter processen
-		return false;
-	}
 
 	/**
 	 * 
@@ -203,8 +168,8 @@ public class ESTM {
 	 */
 	public void parseLpSol(int version) {
 		try {
-			Statement stmt = conn.createStatement();
-			stmt.execute("DELETE FROM `termine` WHERE `version`=" + version);
+			verbindung.query("DELETE FROM `termine` WHERE `version`=" + version);
+			verbindung.closeStatement();
 
 			List<String> termine = new ArrayList<String>();
 			BufferedReader br;
@@ -235,7 +200,8 @@ public class ESTM {
 					System.out.println(q);
 					System.out.println("sql query erfolgreich");
 					// Statement stmt = conn.createStatement();
-					stmt.execute(q);
+					verbindung.query(q);
+					verbindung.closeStatement();
 				}
 			}
 
@@ -251,8 +217,7 @@ public class ESTM {
 	 */
 	public boolean insertPersonIntoDatabase(Person person) {
 		try {
-			Statement stmt = conn.createStatement();
-			String request = "INSERT INTO personen(`ID`, `name`, vorname, rechte, `status`, kennwort) "
+			verbindung.query("INSERT INTO personen(`ID`, `name`, vorname, rechte, `status`, kennwort) "
 					+ "VALUES("
 					+ person.getID()
 					+ ",\""
@@ -264,9 +229,8 @@ public class ESTM {
 					+ ",\""
 					+ person.getStatus()
 					+ "\",\""
-					+ person.getPassword() + "\");";
-			stmt.execute(request);
-			System.out.println(request);
+					+ person.getPassword() + "\");");
+			verbindung.closeStatement();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace(); // boolean fürs error handling usw.
@@ -279,16 +243,15 @@ public class ESTM {
 	 */
 	public void insertTerminwunschIntoDatabase(Termin pTermin) {
 		try {
-			Statement stmt = conn.createStatement();
-			String request = "INSERT INTO terminwunsch(Person1, Person2, Zeitschiene) "
+			verbindung.query("INSERT INTO terminwunsch(Person1, Person2, Zeitschiene) "
 					+ "VALUES("
 					+ pTermin.getLehrer()
 					+ ","
 					+ pTermin.getElter()
 					+ ","
 					+ pTermin.getZeitschiene()
-					+ ");";
-			stmt.execute(request);
+					+ ");");
+			verbindung.closeStatement();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -347,5 +310,15 @@ public class ESTM {
 			  i.getPassword()); } writer.close(); 
 	  } catch (Exception e) {
 		  e.printStackTrace(); } System.out.println("DONE"); 
+	}
+	
+	public Person getLehrer(int lehrerID){
+		Person result = null;
+		for(Person p:personen){
+			if(p.getID()==lehrerID){
+				result = p;
+			}
+		}
+		return result;
 	}
 }

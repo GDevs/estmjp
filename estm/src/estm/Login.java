@@ -114,7 +114,8 @@ public class Login extends JFrame implements ActionListener {
 			this.setVisible(false);
 			verbindung.closeStatement();
 			
-			ESTM estm = new ESTM(verbindung.conn, person); 	//ESTM WIRD ERZEUGT
+			//ESTM estm = new ESTM(verbindung.conn, person); 	//ESTM WIRD ERZEUGT
+			GUI gui = new GUI(verbindung, person);
 			
 			//HIER FEHLT NOCH CODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			
