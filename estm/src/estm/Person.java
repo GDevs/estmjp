@@ -14,13 +14,13 @@ public class Person {
     private int rechte;      // Fehlten auchnoch	
 							 // Georg: Das passwort darf hier NUR in der gehashten form vorliegen
     
-	public Person(int ID, String name, String vorname, int rechte, String status ,String passwort){
+	public Person(int ID, String name, String vorname, int rechte, String status ,String password){
 		this.ID = ID;
 		this.name = name;
 		this.vorname = vorname;
 		this.status = status;
 		this.rechte = rechte;
-		this.password = passwort;
+		this.password = password;
 		termine = new ArrayList<Termin>();
 	}
 	
