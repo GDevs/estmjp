@@ -47,6 +47,7 @@ public class Verbindung {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		//	System.out.println(datenbankAdresse + " " + datenbankName + " " + datenbankNutzer);
 			conn = DriverManager.getConnection("jdbc:mysql://"
 					+ datenbankAdresse + "/" + datenbankName, datenbankNutzer,
 					datenbankKennwort);
@@ -72,6 +73,7 @@ public class Verbindung {
 			// stmt.close();
 		} catch (SQLException ex) {
 			System.out.println("Fehler beim Statement!");
+			ex.printStackTrace();
 		}
 		// System.out.println("SQL Ergebnis: "+temp);
 		return rs;

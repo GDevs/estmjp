@@ -3,9 +3,12 @@ package estm;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,17 +16,17 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.sql.*;
-
-public class Login extends JFrame implements ActionListener {
+public class Login extends JDialog implements ActionListener {
 
 	private JPanel contentPane;
 	private JPasswordField passwordField;
 	private JCheckBox chckbxSpezifiziereLogin;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JLabel error;
+	private JButton btnLogin;
+	private GUI gui;
+	private Verbindung verbindung;
 
 	/**
 	 * Launch the application.
@@ -43,12 +46,16 @@ public class Login extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the frame. 
 	 */
-	public Login() {
+	public Login(GUI gui, Verbindung v) {
+		
+		this.gui = gui;
+		this.verbindung = v;
+		
 		setTitle("Login");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 250, 350);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 250, 362);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -76,7 +83,7 @@ public class Login extends JFrame implements ActionListener {
 		lblKennwort.setBounds(47, 156, 148, 14);
 		contentPane.add(lblKennwort);
 
-		JButton btnLogin = new JButton("Login");
+		btnLogin = new JButton("Login");
 		btnLogin.addActionListener(this);
 		btnLogin.setBounds(45, 261, 150, 28);
 		contentPane.add(btnLogin);
@@ -87,44 +94,47 @@ public class Login extends JFrame implements ActionListener {
 
 		chckbxSpezifiziereLogin = new JCheckBox("Default Server");
 		chckbxSpezifiziereLogin.setSelected(true);
-		chckbxSpezifiziereLogin.setBounds(45, 217, 150, 23);
+		chckbxSpezifiziereLogin.setBounds(45, 217, 200, 23);
 		contentPane.add(chckbxSpezifiziereLogin);
+		
+		error = new JLabel("");
+		error.setBounds(10, 300, 190, 14);
+		contentPane.add(error);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == btnLogin){
 		try {
-			Verbindung verbindung = new Verbindung();
 			String password = new String(passwordField.getPassword());
 			password = Hash.hash(password);
 			ResultSet rs = verbindung
-					.query("SELECT * FROM personen WHERE name='"
-							+ textField.getText() + "' AND vorname='"
-							+ textField_1.getText() + "' AND kennwort='"
+					.query("SELECT * FROM person WHERE Name='"
+							+ textField.getText() + "' AND Vorname='"
+							+ textField_1.getText() + "' AND Kennwort='"
 							+ password + "'");
-			if(!rs.first()){//KEIN ERGEBNISS AUS DER DATENBANK, PASSWORT ODER DER NAME FALSCH
+			if(rs == null) System.out.println("null");
+			if(rs == null || !rs.first()){//KEIN ERGEBNISS AUS DER DATENBANK, PASSWORT ODER DER NAME FALSCH
 				//TODO Meldung über den Fehler
-				System.out.println("NAME ODER PASSWORT FALSCH!");
-				return;
-			}
+				error.setText("Name oder Passwort falsch!");
+				
+			}else{
 			Person person = new Person(rs.getInt("ID"), rs.getString("name"),
 					rs.getString("vorname"), rs.getInt("rechte"),
 					rs.getString("status"), rs.getString("kennwort"));
+			
+			gui.setPerson(person);
+			
 			System.out.println("ERFOLG!");
 			
 			this.setVisible(false);
 			verbindung.closeStatement();
+			gui.prepareUserInterface(textField.getText(), textField_1.getText());
 			
-			//ESTM estm = new ESTM(verbindung.conn, person); 	//ESTM WIRD ERZEUGT
-			GUI gui = new GUI(verbindung, person);
-			
-			//HIER FEHLT NOCH CODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			}
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
-	
-	// habe das hashen in Hash.java gepack damit mans auch in anderen Klassen verwenden kann, Georg
-	// is übrigens static man muss also kein Objekt anlegen
 }

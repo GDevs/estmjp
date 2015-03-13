@@ -7,13 +7,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -320,5 +316,24 @@ public class ESTM {
 			}
 		}
 		return result;
+	}
+	
+	private Termin[] getTermine(String ID) {
+		
+		ResultSet rs = verbindung.query("SELECT Zeitschiene "
+				+ "FROM Terminwunsch "
+				+ "WHERE Terminwunsch.ID = Person.ID");
+		/**
+		 * 
+		 * muss noch zuende geschrieben werden!!
+		 * 
+		 * datenbank tabele terminwunsch soll zu nem array zusammengefasst werden welches alle 
+		 * termine der Person der ID beinhalted
+		 * 
+		 * DATENBANKSTRUCKTUR ÜBERARBEITEN!!!
+		 */
+		
+		
+	
 	}
 }

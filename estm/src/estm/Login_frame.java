@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class Login_frame extends JFrame{
+public class Login_frame extends JFrame implements ActionListener {
 	private Verbindung verbindung;
 	private JTextField textField_Name;
 	private JTextField textField_Vorname;
@@ -61,14 +61,44 @@ public class Login_frame extends JFrame{
 		error.setBounds(10, 109, 133, 14);
 		getContentPane().add(error);
 		
+		btn_Login.addActionListener(this);
 		this.setVisible(true);
 	}
 	
-	public JButton getButton(){ return btn_Login;}
-	public JLabel  getError(){ return error;}
-	public JTextField getLocName(){ return textField_Name;} 
-	public JTextField getVorname(){ return textField_Vorname;} 
-	public JPasswordField getPassword(){ return passwordField_Password;} 
+//	public JButton getButton(){ return btn_Login;}
+//	public JLabel  getError(){ return error;}
+//	public JTextField getLocName(){ return textField_Name;} 
+//	public JTextField getVorname(){ return textField_Vorname;} 
+//	public JPasswordField getPassword(){ return passwordField_Password;}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == btn_Login){
+			String password = null;
+			String name = null;
+			String vorname = null;
+			try{
+				password = Hash.hash(new String(passwordField_Password.getPassword()));
+				name = textField_Name.getText();
+				vorname = textField_Vorname.getText();
+				ResultSet rs = verbindung
+						.query("SELECT * FROM personen WHERE name='"
+								+ name + "' AND vorname='"
+								+ vorname + "' AND kennwort='"
+								+ password + "'");
+		//		System.out.println(name+" "+vorname+" "+password);
+				if(!rs.first()){//KEIN ERGEBNISS AUS DER DATENBANK, PASSWORT ODER DER NAME FALSCH
+					error.setText("Bitte füllen sie alle Felder aus");
+				}else{
+					System.out.println("suc");
+					this.setVisible(false);
+				    this.dispose();
+				}
+			}catch(Exception ex){
+				
+			}
+		
+	} 
 	
 	
 }

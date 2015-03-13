@@ -1,12 +1,15 @@
 package estm;
 
 import java.awt.Choice;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Elter_Interface extends JFrame{
+public class Elter_Interface extends JDialog implements ActionListener{
 	
 	private JButton speichern, update;
 	private Choice choice_D1, choice_D2, choice_D3, choice_D4, choice_D5, choice_D6, choice_D7;
@@ -16,7 +19,7 @@ public class Elter_Interface extends JFrame{
 	private JLabel username;
 	public Elter_Interface() {
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setType(Type.UTILITY);
 		setTitle("Elternsprechtags-Manager");
 		getContentPane().setLayout(null);
@@ -127,10 +130,19 @@ public class Elter_Interface extends JFrame{
 		getContentPane().add(username);
 	}
 	
-	public JButton getSpeichern(){ return speichern;}
-	public JButton getUpdate(){ return update;}
-	public Choice[][] getChoises(){ return c;}
 	public void setUsername(String p){ username.setText(p);}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == speichern){
+			
+			
+			
+			
+		}
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }
